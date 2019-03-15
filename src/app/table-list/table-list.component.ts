@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Http } from '@angular/http';
+
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableListComponent implements OnInit {
 
-  constructor() { }
+
+
+  
 
   ngOnInit() {
   }
