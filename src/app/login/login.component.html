@@ -1,0 +1,14 @@
+<div class="card mt-5" style="margin:auto;width: 400px;">
+  <div class="card-body">
+    <h3 class="card-title"><b>LOGIN</b></h3>
+    <div class="form-group">
+      <label for="email">Usuario</label>
+      <input type="text" class="form-control" id="username" placeholder="Nombre Usuario" [(ngModel)]="username">
+    </div>
+    <div class="form-group">
+      <label for="email">Contraseña</label>
+      <input type="password" class="form-control" id="password" placeholder="Contraseña" [(ngModel)]="password">
+    </div>
+    <button type="submit" class="btn btn-success" (click)="checkLogin()">Inicio</button>
+  </div>
+</div>
