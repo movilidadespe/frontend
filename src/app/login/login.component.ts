@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
   checkLogin(){
     if(this.loginservice.authenticate(this.username, this.password)){
-      this.router.navigate(['maps'])
+      this.router.navigate(['icons'])
       this.invalidLogin= false
     }else
     this.invalidLogin=true
