@@ -1,3 +1,182 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="jumbotron">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <a href="#" class="list-group-item active" style="background-color:#038c00;">Estancia de Investigación</a><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                              <label for="">Nombre:</label>
+                                                <select class="form-control">
+                                                    <option value="+100">Seleccione Nombre</option>
+                                                    <option value="+46">Ejemplo 1 ..</option>
+                                                    <option value="+45">Ejemplo 2 ..</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-2">
+                                <label for="">
+                                    Id:
+                                </label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="list-group-item active" style="background-color:#038c00;"></a>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6"><br>
+                            <label for="exampleInputEmail1"> Nombre:</label><br>
+                            <label for="exampleInputEmail1"> CI:</label><br>
+                            <label for="exampleInputEmail1"> Email:</label><br>
+                            <label for="exampleInputEmail1"> Departamento:</label><br>
+                            <label for="exampleInputEmail1"> Dedicación:</label><br>
+                        </div>
+                        <div class="col-md-6"><br>
+                            <label for="exampleInputEmail1"> Apellido:</label><br>
+                            <label for="exampleInputEmail1"> Cargo:</label><br>
+                            <label for="exampleInputEmail1"> Teléfono:</label><br>
+                            <label for="exampleInputEmail1"> Carrera:</label><br>
+                        </div>
+                    </div>
+                </div><br>
+               
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="card mt-5" style="margin:auto;width: 900px;">
+  <div class="card-header card-header-danger">
+    <h4 class="card-title"><b>Tabla de verificación</b></h4>
+  </div>
+  <div class="card-body">
+
+    <mat-tab-group>
+        <mat-tab label="Requisitos">
+            <mat-selection-list #shoes>
+                <mat-list-option *ngFor="let shoe of typesOfShoes">
+                  {{shoe}}
+                </mat-list-option>
+              </mat-selection-list>
+              
+          </mat-tab>
+
+          <mat-tab label="Datos Docente">
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="LUGAR" type="text">
+                  </mat-form-field>
+                </div>
+      
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="FECHA" type="date">
+                  </mat-form-field>
+                </div>
+      
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="ACTIVIDADES" type="text">
+                  </mat-form-field>
+                </div>
+      
+              </div>
+            </mat-tab>
+
+            <mat-tab label="Proyecto Estancia">
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="LUGAR" type="text">
+                    </mat-form-field>
+                  </div>
+        
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="FECHA" type="date">
+                    </mat-form-field>
+                  </div>
+        
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="ACTIVIDADES" type="text">
+                    </mat-form-field>
+                  </div>
+        
+                </div>
+              </mat-tab>
+
+      <mat-tab label="Cronograma ">
+        <div class="row">
+          <div class="col-md-8">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="LUGAR" type="text">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-8">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="FECHA" type="date">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-8">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="ACTIVIDADES" type="text">
+            </mat-form-field>
+          </div>
+
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Financiamiento ">
+          <div class="row">
+            <div class="col-md-8">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="LUGAR" type="text">
+              </mat-form-field>
+            </div>
+  
+            <div class="col-md-8">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="FECHA" type="date">
+              </mat-form-field>
+            </div>
+  
+            <div class="col-md-8">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ACTIVIDADES" type="text">
+              </mat-form-field>
+            </div>
+  
+          </div>
+        </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+
+
+
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
@@ -136,9 +315,44 @@
                                    <span class="input-group-text">Entregables</span>
                                  </div>
                                  <textarea class="form-control" aria-label="With textarea"></textarea>
+                                 
+
+                                 <div class="card mt-5" style="margin:auto;width: 700px;">
+                                    <div class="card-header card-header-danger">
+                                        <h4 class="card-title"><b>CRONOGRAMA</b></h4>
+                                    </div>
+                                      <div class="card-body">
+                                              
+                                  <mat-tab-group>
+                                      <mat-tab label="Cronograma ">
+                                          <div class="row">
+                                          <div class="col-md-8">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="LUGAR" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                  
+                                            <div class="col-md-8">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="FECHA" type="date">
+                                                  </mat-form-field>
+                                                </div>
+                                  
+                                                <div class="col-md-8">
+                                                      <mat-form-field class="example-full-width">
+                                                        <input matInput placeholder="ACTIVIDADES" type="text">
+                                                      </mat-form-field>
+                                                    </div>
+                                  
+                                          </div>
+                                           </mat-tab>
+                                    </mat-tab-group>
+                                    </div>
+                                    </div>
                               </div>
+
                          </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Aceptar</button>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="checkLogin()">Aceptar</button>
                             <div class="clearfix"></div>
                         </form>
                    
