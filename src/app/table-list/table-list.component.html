@@ -73,6 +73,9 @@
                                           {{shoe}}
                                         </mat-list-option>
                                       </mat-selection-list>
+                                      <div class="col-md-4">
+                                          <button type="submit" class="btn btn-success" (click)="checkLogin()">Verificar</button>
+                                        </div>
                       
                                     </mat-tab>
                       
@@ -274,23 +277,31 @@
                                       </div>
                                     </mat-tab>
                                     <mat-tab label="Financiamiento ">
-                                      <div class="row">
-                                        <div class="col-md-8">
-                                          <mat-form-field class="example-full-width">
-                                            <input matInput placeholder="LUGAR" type="text">
-                                          </mat-form-field>
-                                        </div>
-                      
-                                        <div class="col-md-8">
-                                          <mat-form-field class="example-full-width">
-                                            <input matInput placeholder="FECHA" type="date">
-                                          </mat-form-field>
-                                        </div>
-                      
-                                        <div class="col-md-8">
-                                          <mat-form-field class="example-full-width">
-                                            <input matInput placeholder="ACTIVIDADES" type="text">
-                                          </mat-form-field>
+                                      <div class="card">
+                                        <div class="row">
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Ayuda económica" type="text">
+                                            </mat-form-field>
+                                          </div>
+                                      
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Pasajes" type="number">
+                                            </mat-form-field>
+                                          </div>
+                                      
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Otros especifíque" type="text">
+                                            </mat-form-field>
+                                          </div>
+                                      
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Total" type="number">
+                                            </mat-form-field>
+                                          </div>
                                         </div>
                                       </div>
                                     </mat-tab>
