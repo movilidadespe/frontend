@@ -8,8 +8,8 @@ import { AuthenticationService} from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  username='jose';
-  password='12345';
+  username='';
+  password='';
   invalidLogin = false
 
   constructor(private router: Router, private loginservice: AuthenticationService) { }

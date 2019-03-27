@@ -13,7 +13,7 @@ export class IconsComponent implements OnInit {
   }
 
   checkLogin(){
-    this.router.navigate(['table-list'])
+    this.router.navigate(['estancia'])
    
 }
 }

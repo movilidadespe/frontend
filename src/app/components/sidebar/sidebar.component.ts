@@ -11,11 +11,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Convocatoria',  icon: 'dashboard', class: '' },
     { path: '/user-profile', title: 'Plan de Movilidad',  icon:'person', class: '' },
     { path: '/table-list', title: 'Estancia',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: '/icons', title: 'Movilidad',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'Mantenimiento',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Plan movilidad',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Archivos',  icon:'unarchive', class: 'active-pro' },
 ];
 
 @Component({
