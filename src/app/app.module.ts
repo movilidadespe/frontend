@@ -12,17 +12,18 @@ import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
+
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { LoginComponent } from './login/login.component';
 import { EstanciaComponent } from './estancia/estancia.component';
-
+import { IndexadaComponent } from './indexada/indexada.component';
 
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
   
     
 

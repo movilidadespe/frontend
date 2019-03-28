@@ -6,6 +6,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
+import { IndexadaComponent } from 'app/indexada/indexada.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -56,4 +58,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'login',        component: LoginComponent },
     { path: 'estancia',        component: EstanciaComponent },
+    { path: 'indexada',        component: IndexadaComponent },
 ];

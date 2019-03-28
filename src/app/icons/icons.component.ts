@@ -12,8 +12,12 @@ export class IconsComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkLogin(){
-    this.router.navigate(['estancia'])
-   
+  checkEstancia(){
+    this.router.navigate(['estancia']) 
 }
+checkIndexada(){
+  this.router.navigate(['indexada']) 
+}
+
+
 }
