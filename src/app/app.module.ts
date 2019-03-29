@@ -22,6 +22,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { DatosService } from './service/datos.service';
 
 @NgModule({
   imports: [
@@ -40,7 +41,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AdminLayoutComponent,
 
   ],
-  providers: [],
+  providers: [
+    DatosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

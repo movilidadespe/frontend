@@ -20,6 +20,8 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import { tipoMovilidadComponent } from '../../../../tipoMovilidad/tipoMovilidad.component';
+import { DatosComponent } from 'app/Datos/Datos.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -39,6 +41,8 @@ import {
     TypographyComponent,
     IconsComponent,
     MapsComponent,
+    tipoMovilidadComponent,
+    DatosComponent,
     NotificationsComponent,
     UpgradeComponent,
   ]
