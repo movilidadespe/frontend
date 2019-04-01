@@ -22,6 +22,9 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ConsumirService } from './service/consumir.service';
+import { InformacionComponent } from './informacion/informacion.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +33,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FormsModule,
     HttpModule,
     ComponentsModule,
+    HttpClientModule,
     RouterModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
@@ -44,7 +48,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     
 
   ],
-  providers: [],
+  providers: [ConsumirService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

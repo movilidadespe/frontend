@@ -46,6 +46,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { InformacionComponent } from 'app/informacion/informacion.component';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import {
     LoginComponent,
     EstanciaComponent,
     IndexadaComponent,
+    InformacionComponent,
   ]
 })
 
