@@ -25,6 +25,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ConsumirService } from './service/consumir.service';
 import { InformacionComponent } from './informacion/informacion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RequisitosService } from './service/requisitos.service';
+
 
 
 @NgModule({
@@ -43,12 +45,13 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-
+    
   
     
 
   ],
-  providers: [ConsumirService],
+  providers: [ConsumirService,
+  RequisitosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

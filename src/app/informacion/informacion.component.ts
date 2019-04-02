@@ -22,7 +22,7 @@ export class InformacionComponent implements OnInit {
     this.rest.getProducts().subscribe((data: {}) => {
       console.log(data);
       this.products = data;
-      this.products = Array.of(this.products); 
+       
     });
   }
 }

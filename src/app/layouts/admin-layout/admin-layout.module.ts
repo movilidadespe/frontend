@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
 import { IndexadaComponent } from 'app/indexada/indexada.component';
+import { RequisitoComponent } from 'app/requisito/requisito.component';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -98,6 +99,7 @@ import { InformacionComponent } from 'app/informacion/informacion.component';
     EstanciaComponent,
     IndexadaComponent,
     InformacionComponent,
+    RequisitoComponent,
   ]
 })
 

@@ -1,0 +1,68 @@
+<div class="main-content">
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="card">
+
+          <div class="card-header card-header-danger">
+
+            <h4 class="card-title ">requisitos </h4>
+
+          </div>
+
+          <div class="card-body" >
+
+            <div class="table-responsive">
+
+              <table class="table" >
+
+                <thead class=" text-primary" >
+
+                  <th >
+                    ID
+                  </th>
+
+                  <th>
+                    Nombre
+                  </th>
+                </thead>
+
+                <tbody>
+
+                  <tr *ngFor="let tipoM of products">
+
+                    <td>
+
+                      {{tipoM.uzmtrequisito_ID}}
+
+                    </td>
+
+                    <td>
+
+                      {{tipoM.uzmtrequisito_DETALLE}}
+
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
