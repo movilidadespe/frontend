@@ -6,7 +6,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./estancia.component.scss']
 })
 export class EstanciaComponent implements OnInit {
-  typesOfShoes: string[] = [
+  requisitos: string[] = [
     'Ser investigador o profesor titular escalafonado.',
     'No haber sido beneficiado en el plan de movilidad del año anterior.',
     'Acreditar una permanencia ininterrumpida mínima de 3 años en la Universidad.',
