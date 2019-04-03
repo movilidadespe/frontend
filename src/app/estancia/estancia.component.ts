@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { RequisitosService} from 'app/service/requisitos.service';
+import { ConsumirService } from 'app/service/consumir.service';
 declare var $:any;
 @Component({
   selector: 'app-estancia',
@@ -9,21 +10,31 @@ declare var $:any;
 })
 
 export class EstanciaComponent implements OnInit {
-  products: any;
+  requisito: any;
+   products: any = [];
 
-  constructor(private router: Router, private RequisitosService:RequisitosService) { }
+
+  constructor(private router: Router, private RequisitosService:RequisitosService, public rest: ConsumirService) { }
 
   ngOnInit() {
     this.getrequisito();
+    this.getProducts();
   }
 
+  getProducts() {
+    this.products = [];
+    this.rest.getProducts().subscribe((data: {}) => {
+      console.log(data);
+      this.products = data;
+       
+    });}
 
   getrequisito() {
     //console.log('entre')
     this.RequisitosService.getrequisito().subscribe(data=>{
       if(data){
       console.log('requisito,data')
-    this.products=data;}});
+    this.requisito=data;}});
     
 }
 checkLogin(){
