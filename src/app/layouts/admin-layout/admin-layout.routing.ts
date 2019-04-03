@@ -58,5 +58,4 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'login',        component: LoginComponent },
     { path: 'estancia',        component: EstanciaComponent },
     { path: 'indexada',        component: IndexadaComponent },
-    { path: 'requisito',        component: RequisitoComponent },
 ];
