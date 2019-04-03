@@ -26,6 +26,7 @@ export class EstanciaComponent implements OnInit {
     this.rest.getProducts().subscribe((data: {}) => {
       console.log(data);
       this.products = data;
+      this.products = Array.of(this.products);
        
     });}
 
@@ -35,6 +36,7 @@ export class EstanciaComponent implements OnInit {
       if(data){
       console.log('requisito,data')
     this.requisito=data;}});
+
     
 }
 checkLogin(){

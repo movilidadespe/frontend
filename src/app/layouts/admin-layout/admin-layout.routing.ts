@@ -6,7 +6,6 @@ import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
 import { IndexadaComponent } from 'app/indexada/indexada.component';
-import { InformacionComponent } from 'app/informacion/informacion.component';
 import { RequisitoComponent } from 'app/requisito/requisito.component';
 
 
@@ -59,6 +58,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'login',        component: LoginComponent },
     { path: 'estancia',        component: EstanciaComponent },
     { path: 'indexada',        component: IndexadaComponent },
-    { path: 'informacion',        component: InformacionComponent },
     { path: 'requisito',        component: RequisitoComponent },
 ];

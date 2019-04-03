@@ -23,7 +23,7 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ConsumirService } from './service/consumir.service';
-import { InformacionComponent } from './informacion/informacion.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { RequisitosService } from './service/requisitos.service';
 
@@ -50,7 +50,8 @@ import { RequisitosService } from './service/requisitos.service';
     
 
   ],
-  providers: [ConsumirService,
+  providers: [
+  ConsumirService,
   RequisitosService],
   bootstrap: [AppComponent]
 })
