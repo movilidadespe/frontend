@@ -6,7 +6,6 @@ import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
 import { IndexadaComponent } from 'app/indexada/indexada.component';
-import { RequisitoComponent } from 'app/requisito/requisito.component';
 
 
 export const AdminLayoutRoutes: Routes = [
