@@ -8,7 +8,9 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
+import { EstanciaListComponent } from 'app/estancia/estancia-list/estancia-list.component';
 import { IndexadaComponent } from 'app/indexada/indexada.component';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -97,6 +99,7 @@ import {
     LoginComponent,
     EstanciaComponent,
     IndexadaComponent,
+    EstanciaListComponent,
   ]
 })
 

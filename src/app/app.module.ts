@@ -26,6 +26,7 @@ import { ConsumirService } from './service/consumir.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RequisitosService } from './service/requisitos.service';
+import { EstanciaListComponent } from './estancia/estancia-list/estancia-list.component';
 
 
 
@@ -46,7 +47,6 @@ import { RequisitosService } from './service/requisitos.service';
     AppComponent,
     AdminLayoutComponent,
     
-  
     
 
   ],
