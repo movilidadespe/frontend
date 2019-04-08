@@ -11,18 +11,23 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
+
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
+import { LoginComponent } from './login/login.component';
+import { EstanciaComponent } from './estancia/estancia.component';
+import { IndexadaComponent } from './indexada/indexada.component';
+
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { DatosService } from './service/datos.service';
+import { ConsumirService } from './service/consumir.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { RequisitosService } from './service/requisitos.service';
+
+
 
 @NgModule({
   imports: [
@@ -30,6 +35,7 @@ import { DatosService } from './service/datos.service';
     FormsModule,
     HttpModule,
     ComponentsModule,
+    HttpClientModule,
     RouterModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
@@ -39,11 +45,14 @@ import { DatosService } from './service/datos.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
+  
+    
 
   ],
   providers: [
-    DatosService
-  ],
+  ConsumirService,
+  RequisitosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
