@@ -47,6 +47,9 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { ConvocatoriaViewComponent } from 'app/convocatoria/convocatoria-view/convocatoria-view.component';
+import { ConvocatoriaEditComponent } from 'app/convocatoria/convocatoria-edit/convocatoria-edit.component';
+import { ConvocatoriaComponent } from 'app/convocatoria/convocatoria.component';
 
 
 
@@ -99,6 +102,9 @@ import {
     EstanciaComponent,
     IndexadaComponent,
     tipoMovilidadComponent,
+    ConvocatoriaComponent,
+    ConvocatoriaViewComponent,
+    ConvocatoriaEditComponent,
   ]
 })
 

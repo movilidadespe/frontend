@@ -29,6 +29,8 @@ import { RequisitosService } from './service/requisitos.service';
 
 
 
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -45,6 +47,8 @@ import { RequisitosService } from './service/requisitos.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+   
+
     
   
     

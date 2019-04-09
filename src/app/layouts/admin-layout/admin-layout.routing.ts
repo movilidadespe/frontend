@@ -7,6 +7,9 @@ import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
 import { IndexadaComponent } from 'app/indexada/indexada.component';
 import { tipoMovilidadComponent } from 'app/tipoMovilidad/tipoMovilidad.component';
+import { ConvocatoriaComponent } from 'app/convocatoria/convocatoria.component';
+import { ConvocatoriaViewComponent } from 'app/convocatoria/convocatoria-view/convocatoria-view.component';
+import { ConvocatoriaEditComponent } from 'app/convocatoria/convocatoria-edit/convocatoria-edit.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -59,4 +62,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'estancia',        component: EstanciaComponent },
     { path: 'indexada',        component: IndexadaComponent },
     { path: 'tipoMovilidad',        component: tipoMovilidadComponent },
+    { path: 'convocatoria',        component: ConvocatoriaComponent },
+    { path: 'convocatoriaView',        component: ConvocatoriaViewComponent },
+    { path: 'convocatoriaEdit',        component: ConvocatoriaEditComponent},
 ];
