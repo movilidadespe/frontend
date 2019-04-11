@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articuloInvestigacion.component.scss']
 })
 export class ArticuloInvestigacionComponent implements OnInit {
+  mensaje: string = 'este es mi hijo';
 
   constructor() { }
 
   ngOnInit() {
+  
+  }
+  saludo(value){
+    this.mensaje = value;
   }
 
 }
