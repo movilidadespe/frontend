@@ -26,8 +26,7 @@ import { ConsumirService } from './service/consumir.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RequisitosService } from './service/requisitos.service';
-import { EstanciaListComponent } from './estancia/estancia-list/estancia-list.component';
-import { MovilidadComponent } from './movilidad/movilidad.component';
+
 import { ConvocatoriaComponent } from './convocatoria/convocatoria.component';
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 

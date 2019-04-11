@@ -10,8 +10,7 @@ import { LoginComponent } from 'app/login/login.component';
 import { EstanciaComponent } from 'app/estancia/estancia.component';
 import { EstanciaListComponent } from 'app/estancia/estancia-list/estancia-list.component';
 import { IndexadaComponent } from 'app/indexada/indexada.component';
-import { ArticuloInvestigacionComponent } from 'app/movilidad/articuloInvestigacion/articuloInvestigacion.component';
-import { MovilidadComponent } from 'app/movilidad/movilidad.component';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -100,9 +99,6 @@ import {
     LoginComponent,
     EstanciaComponent,
     IndexadaComponent,
-    EstanciaListComponent,
-    ArticuloInvestigacionComponent,
-    MovilidadComponent,
   ]
 })
 
