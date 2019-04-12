@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento.service';
 
 @Component({
   selector: 'app-requisitos',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./requisitos.component.scss']
 })
 export class RequisitosComponent implements OnInit {
+  requisitos: any;
 
-  constructor() { }
+  constructor(public rest: ConsumirMantenimientoService) { }
 
   ngOnInit() {
+    this.getRequisitos();
   }
-
+  getRequisitos() {
+    this.requisitos = [];
+    this.rest.getRequisitos().subscribe((data: {}) => {
+      console.log(data);
+      this.requisitos = data;
+    });
+  }
 }

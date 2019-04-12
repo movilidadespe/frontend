@@ -1,3 +1,53 @@
-<p>
-  requisitos works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Requisitos </h4>    
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table" >
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                    Nombre
+                                  </th>   
+                                  <th>
+                                      Detalle
+                                    </th> 
+                                    <th>
+                                      Estado
+                                    </th>                         
+
+                              </thead>
+                              <tbody *ngFor="let r of requisitos">
+                                  <tr>
+                                      <td>
+                                          {{r.uzmtrequisito_ID}}
+                                      </td>
+                                      <td>
+                                       {{r.uzmtrequisito_NOMBRE}}
+                                      </td>
+                                      <td>
+                                          {{r.uzmtrequisito_DETALLE}}
+                                         </td>
+                                         <td>
+                                          {{r.uzmtrequisito_ESTADO}}
+                                         </td>
+                                  </tr>
+                            </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>       
+      </div>
+  </div>
+</div>
+

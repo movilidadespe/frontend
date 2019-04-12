@@ -1,5 +1,5 @@
-import { OnInit, Component } from "@angular/core";
-import { ConsumirMantenimientoService } from "app/service/consumir-mantenimiento.service";
+import { Component, OnInit } from '@angular/core';
+import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento.service';
 
 
 @Component({
