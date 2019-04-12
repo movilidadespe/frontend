@@ -12,6 +12,9 @@ import { IntercambioComponent } from 'app/movilidad/intercambio/intercambio.comp
 import { ArticulosComponent } from 'app/movilidad/articulos/articulos.component';
 import { GestionComponent } from 'app/movilidad/gestion/gestion.component';
 import { ExternosComponent } from 'app/movilidad/externos/externos.component';
+import { ConvocatoriaComponent } from 'app/convocatoria/convocatoria.component';
+import { MenuComponent } from 'app/mantenimiento/menu/menu.component';
+import { RequisitosComponent } from 'app/mantenimiento/requisitos/requisitos.component';
 
 
 
@@ -70,4 +73,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'movilidad/articulos',        component: ArticulosComponent },
     { path: 'movilidad/gestion',        component: GestionComponent },
     { path: 'movilidad/externos',        component: ExternosComponent },
+    { path: 'convocatoria',        component: ConvocatoriaComponent },
+    { path: 'mantenimiento',        component: MenuComponent },
+    { path: 'mantenimiento/requisitos',        component: RequisitosComponent },
 ];
