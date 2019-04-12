@@ -1,0 +1,60 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Convocatoria </h4>    
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" >
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                      Descripcion
+                                    </th>   
+                                    <th>
+                                        Fecha inicio
+                                      </th> 
+                                      <th>
+                                        Fecha fin
+                                      </th> 
+                                      <th>
+                                        estado
+                                      </th>                              
+
+                                </thead>
+                                <tbody *ngFor="let c of Convocatoria">
+                                    <tr>
+                                        <td>
+                                            {{c.id}}
+                                        </td>
+                                        <td>
+                                         {{c.descrpcion}}
+                                        </td>
+                                        <td>
+                                            {{c.fecha_fin}}
+                                           </td>
+                                           <td>
+                                            {{c.fecha_inicio}}
+                                           </td>
+                                           <td>
+                                            {{c.estado}}
+                                           </td>
+                                        
+                                    </tr>
+                              </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+  </div>
+  
