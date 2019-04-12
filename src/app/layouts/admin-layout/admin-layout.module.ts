@@ -7,11 +7,9 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
-import { EstanciaComponent } from 'app/estancia/estancia.component';
-import { EstanciaListComponent } from 'app/estancia/estancia-list/estancia-list.component';
-import { IndexadaComponent } from 'app/indexada/indexada.component';
-import { ArticuloInvestigacionComponent } from 'app/movilidad/articuloInvestigacion/articuloInvestigacion.component';
-import { MovilidadComponent } from 'app/movilidad/movilidad.component';
+
+
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -49,6 +47,14 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { PlanesComponent } from 'app/movilidad/planes/planes.component';
+import { EstanciaComponent } from 'app/movilidad/estancia/estancia.component';
+import { IndexadaComponent } from 'app/movilidad/indexada/indexada.component';
+import { IntercambioComponent } from 'app/movilidad/intercambio/intercambio.component';
+import { ArticulosComponent } from 'app/movilidad/articulos/articulos.component';
+import { GestionComponent } from 'app/movilidad/gestion/gestion.component';
+import { ExternosComponent } from 'app/movilidad/externos/externos.component';
+
 
 
 
@@ -99,10 +105,12 @@ import {
     MapsComponent,
     LoginComponent,
     EstanciaComponent,
+    IntercambioComponent,
     IndexadaComponent,
-    EstanciaListComponent,
-    ArticuloInvestigacionComponent,
-    MovilidadComponent,
+    PlanesComponent,
+    ArticulosComponent,
+    GestionComponent,
+    ExternosComponent,
   ]
 })
 

@@ -4,11 +4,16 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
-import { EstanciaComponent } from 'app/estancia/estancia.component';
-import { IndexadaComponent } from 'app/indexada/indexada.component';
-import { EstanciaListComponent } from 'app/estancia/estancia-list/estancia-list.component';
-import { ArticuloInvestigacionComponent } from 'app/movilidad/articuloInvestigacion/articuloInvestigacion.component';
-import { MovilidadComponent } from 'app/movilidad/movilidad.component';
+
+import { PlanesComponent } from 'app/movilidad/planes/planes.component';
+import { EstanciaComponent } from 'app/movilidad/estancia/estancia.component';
+import { IndexadaComponent } from 'app/movilidad/indexada/indexada.component';
+import { IntercambioComponent } from 'app/movilidad/intercambio/intercambio.component';
+import { ArticulosComponent } from 'app/movilidad/articulos/articulos.component';
+import { GestionComponent } from 'app/movilidad/gestion/gestion.component';
+import { ExternosComponent } from 'app/movilidad/externos/externos.component';
+
+
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -58,9 +63,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'login',        component: LoginComponent },
-    { path: 'estancia',        component: EstanciaComponent },
-    { path: 'indexada',        component: IndexadaComponent },
-    { path: 'estancia-list',        component: EstanciaListComponent },
-    { path: 'articuloInvestigacion', component: ArticuloInvestigacionComponent},
-    { path: 'movilidad', component: MovilidadComponent},
+    { path: 'movilidad/indexada',        component: IndexadaComponent },
+    { path: 'movilidad/planes',        component: PlanesComponent },
+    { path: 'movilidad/estancia',        component: EstanciaComponent },
+    { path: 'movilidad/intercambio',        component: IntercambioComponent },
+    { path: 'movilidad/articulos',        component: ArticulosComponent },
+    { path: 'movilidad/gestion',        component: GestionComponent },
+    { path: 'movilidad/externos',        component: ExternosComponent },
 ];

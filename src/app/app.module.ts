@@ -15,8 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { LoginComponent } from './login/login.component';
-import { EstanciaComponent } from './estancia/estancia.component';
-import { IndexadaComponent } from './indexada/indexada.component';
+
 
 import {
   AgmCoreModule
@@ -26,10 +25,9 @@ import { ConsumirService } from './service/consumir.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RequisitosService } from './service/requisitos.service';
-import { EstanciaListComponent } from './estancia/estancia-list/estancia-list.component';
-import { MovilidadComponent } from './movilidad/movilidad.component';
 import { ConvocatoriaComponent } from './convocatoria/convocatoria.component';
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+
 
 
 
@@ -41,22 +39,19 @@ import { MantenimientoComponent } from './mantenimiento/mantenimiento.component'
       ComponentsModule,
       HttpClientModule,
       RouterModule,
-      AppRoutingModule,
+      AppRoutingModule
+   ],
+   declarations: [
+      AppComponent,
+      AdminLayoutComponent,
       
    ],
-   
-
- 
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
-    
-    
-
-  ],
-  providers: [
-  ConsumirService,
-  RequisitosService],
-  bootstrap: [AppComponent]
+   providers: [
+      ConsumirService,
+      RequisitosService,
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
