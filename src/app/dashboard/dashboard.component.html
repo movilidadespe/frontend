@@ -76,7 +76,9 @@
                                           31-12-2019
                                         </td>
                                         <td class="text-primary">
-                                          <mat-slide-toggle color="primary">Inactivo</mat-slide-toggle>
+                                          <mat-slide-toggle [checked]="isAwesome" (change)="estado()" color="primary">
+                                            {{isAwesome}}
+                                          </mat-slide-toggle>
                                         </td>
                                     </tr>
                                  </tbody>
@@ -88,4 +90,4 @@
         </div>
     </div>
   </div>
-  
+ 
