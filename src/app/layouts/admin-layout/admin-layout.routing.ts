@@ -15,6 +15,11 @@ import { ExternosComponent } from 'app/movilidad/externos/externos.component';
 import { ConvocatoriaComponent } from 'app/convocatoria/convocatoria.component';
 import { MenuComponent } from 'app/mantenimiento/menu/menu.component';
 import { RequisitosComponent } from 'app/mantenimiento/requisitos/requisitos.component';
+import { PlanmovilidadComponent } from 'app/mantenimiento/planmovilidad/planmovilidad.component';
+import { TipomovilidadComponent } from 'app/mantenimiento/tipomovilidad/tipomovilidad.component';
+import { MovsubmComponent } from 'app/mantenimiento/movsubm/movsubm.component';
+import { ConvenioComponent } from 'app/mantenimiento/convenio/convenio.component';
+import { ConvoComponent } from 'app/mantenimiento/convo/convo.component';
 
 
 
@@ -76,4 +81,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'convocatoria',        component: ConvocatoriaComponent },
     { path: 'mantenimiento',        component: MenuComponent },
     { path: 'mantenimiento/requisitos',        component: RequisitosComponent },
+    { path: 'mantenimiento/planmovilidad',        component: PlanmovilidadComponent },
+    { path: 'mantenimiento/tipomovilidad',        component: TipomovilidadComponent },
+    { path: 'mantenimiento/movsubm',        component: MovsubmComponent },
+    { path: 'mantenimiento/convenio',        component: ConvenioComponent },
+    { path: 'mantenimiento/convo',        component: ConvoComponent },
 ];

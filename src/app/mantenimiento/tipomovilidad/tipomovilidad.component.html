@@ -1,0 +1,47 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Tipos de Movilidad </h4>    
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table" >
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                    Convocatoria ID
+                                  </th>  
+                                  <th>
+                                    Nombre
+                                  </th>
+                           
+                              </thead>
+                              <tbody *ngFor="let t of tmovilidad">
+                                  <tr>
+                                      <td>
+                                          {{t.uzmttipmov_ID}}
+                                      </td>
+                                      <td>
+                                       {{t.UZMTCONVO_ID}}
+                                      </td>
+                                      <td>
+                                        {{t.nombre}}
+                                       </td>
+                                  </tr>
+                            </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>       
+      </div>
+  </div>
+</div>
+

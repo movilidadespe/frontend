@@ -57,6 +57,11 @@ import { ExternosComponent } from 'app/movilidad/externos/externos.component';
 import { ConvocatoriaComponent } from 'app/convocatoria/convocatoria.component';
 import { MenuComponent } from 'app/mantenimiento/menu/menu.component';
 import { RequisitosComponent } from 'app/mantenimiento/requisitos/requisitos.component';
+import { PlanmovilidadComponent } from 'app/mantenimiento/planmovilidad/planmovilidad.component';
+import { TipomovilidadComponent } from 'app/mantenimiento/tipomovilidad/tipomovilidad.component';
+import { MovsubmComponent } from 'app/mantenimiento/movsubm/movsubm.component';
+import { ConvenioComponent } from 'app/mantenimiento/convenio/convenio.component';
+import { ConvoComponent } from 'app/mantenimiento/convo/convo.component';
 
 
 
@@ -117,6 +122,11 @@ import { RequisitosComponent } from 'app/mantenimiento/requisitos/requisitos.com
     ConvocatoriaComponent,
     MenuComponent,
     RequisitosComponent,
+    PlanmovilidadComponent,
+    TipomovilidadComponent,
+    MovsubmComponent,
+    ConvenioComponent,
+    ConvoComponent,
   ]
 })
 
