@@ -8,6 +8,7 @@ import { TipomovilidadComponent } from './tipomovilidad/tipomovilidad.component'
 import { MovsubmComponent } from './movsubm/movsubm.component';
 import { ConvenioComponent } from './convenio/convenio.component';
 import { ConvoComponent } from './convo/convo.component';
+import { ConvoAddComponent } from './convo/convo-add/convo-add.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ConvoComponent } from './convo/convo.component';
     MovsubmComponent,
     ConvenioComponent,
     ConvoComponent,
+    ConvoAddComponent,
   ], 
   exports :[
     RequisitosComponent,
@@ -32,6 +34,7 @@ import { ConvoComponent } from './convo/convo.component';
     MovsubmComponent,
     ConvenioComponent,
     ConvoComponent,
+    ConvoAddComponent,
   ]
 })
 

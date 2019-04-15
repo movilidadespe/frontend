@@ -41,5 +41,7 @@ getMovsubm() :Observable<any>{
 getConvenio() :Observable<any>{
   return this.http.get(url + 'convenio').pipe(map(this.extractData));
 }
-
+create(convo: any): Observable<any> {
+  return this.http.post(url + `/crearConv`, convo);
+}
 }
