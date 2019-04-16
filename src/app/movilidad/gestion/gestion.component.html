@@ -1,3 +1,235 @@
-<p>
-  gestion works!
-</p>
+<br>
+<br>
+<div class="main-content" style="margin:auto;width: 1500px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Formato para solicitar fondos para gestión de la inverstigación </h4>
+            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="container-fluid">
+                        <input type="text" name="id" [(ngModel)]="id">
+                        <button type="submit"  class="btn btn-success" (click)="getProducts(id)">Verificar</button>
+                        
+                        
+                        <div class="row" *ngFor="let p of  products">
+                        
+                          
+
+                                <img src="{{p.img}}" width="150" height="150">
+
+                            <div class="col-md-4" ><br>
+                              <i class="fa fa-user-circle-o"></i> Nombres: {{p.nombres}}<br>
+                              <i class="fa fa-id-card"></i> Cédula: {{p.cedula}}<br>
+                              <i class="fa fa-envelope-o"></i> Correos: {{p.emails}}<br>
+                              <i class="fa fa-user-circle-o"></i> Departamentos: {{p.departamento}}<br>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4"><br>
+                              <i class="fa fa-user-circle-o"></i> Nombres: {{p.apellidos}}<br>
+                              <i class="fa fa-user-circle-o"></i> Cargo: {{p.cargo}}<br>
+                              <i class="fa fa-mobile"></i> Teléfono: {{p.telefonos}}<br>
+                              <i class="fa fa-user-circle-o"></i> Carrera: {{p.carrera}}<br>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="main-content" style="margin:auto;width: 1450px;">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-8">
+                              <div class="card">
+                                <div class="card-header card-header-danger">
+                                  <h4 class="card-title">Tabla de verificación</h4>
+                                  
+                                </div>
+                                <div class="card-body">
+                      
+                                  <mat-tab-group>
+                                    
+                                    <mat-tab label="Datos Profesor">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Nombre" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Cédula" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Cargo" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Teléfono" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Departamento,Centro o Unidad" type="text">
+                                              </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="submit" class="btn btn-success" (click)="checkLogin()">Siguiente</button>
+                                          </div>
+                                    </mat-tab>
+                      
+                                    <mat-tab label="Gestión de Investigación">
+                                      <div class="card">
+                                        <div class="card-header card-header-danger">
+                                            <h4 class="card-title">Gestión de Investigación </h4>
+                                            <p class="card-category">Formulario Gestión de Investigación</p>
+                                        </div>
+                                      
+                                        <div class="example-container">
+                                            <br>
+                                            <mat-form-field>
+                                              <input matInput placeholder="Objetivos">
+                                            </mat-form-field>
+                                        
+                                            <div class="col-md-4">
+                                                <h3>Organismo o Institución</h3>
+                                            </div>
+                      
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre" type="text">
+                                                  </mat-form-field>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Sitio Web" type="text">
+                                                  </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="País" type="text">
+                                                  </mat-form-field>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Ciudad" type="text">
+                                                  </mat-form-field>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre de Contacto" type="text">
+                                                  </mat-form-field>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Teléfono contacto" type="text">
+                                                  </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Email contacto" type="text">
+                                                </mat-form-field>
+                                              </div>
+                                          </div>
+                                          
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Fecha de inicio participación" type="date">
+                                                  </mat-form-field>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Fecha de finalización" type="date">
+                                                  </mat-form-field>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4">
+                                              <button type="submit" class="btn btn-success" (click)="checkLogin()">Guardar</button>
+                                            </div>
+                                          
+                                        </div>
+                                      
+                                    </mat-tab>
+                                
+                                    <mat-tab label="Financiamiento ">
+                                      <form style="max-resolution: 5px;;width: 800px;">
+                                      <div class="card">
+                                        <div class="row">
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Pasajes" type="text">
+                                            </mat-form-field>
+                                          </div>
+                                      
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Viáticos/subsistencias" type="number">
+                                            </mat-form-field>
+                                          </div>
+                                      
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Inscripción a congreso" type="number">
+                                            </mat-form-field>
+                                          </div>
+                                      
+                                          <div class="col-md-8">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Total" type="number">
+                                            </mat-form-field>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </form>
+                                    </mat-tab>
+                                  </mat-tab-group>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+                </div>  
+              </div>     
+        </div> 
+    </div> 
+</div>

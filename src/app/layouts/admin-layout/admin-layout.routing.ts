@@ -20,6 +20,7 @@ import { TipomovilidadComponent } from 'app/mantenimiento/tipomovilidad/tipomovi
 import { MovsubmComponent } from 'app/mantenimiento/movsubm/movsubm.component';
 import { ConvenioComponent } from 'app/mantenimiento/convenio/convenio.component';
 import { ConvoComponent } from 'app/mantenimiento/convo/convo.component';
+import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.component';
 
 
 
@@ -86,4 +87,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'mantenimiento/movsubm',        component: MovsubmComponent },
     { path: 'mantenimiento/convenio',        component: ConvenioComponent },
     { path: 'mantenimiento/convo',        component: ConvoComponent },
+    { path: 'mantenimiento/convo/convo-add',        component: ConvoAddComponent },
+
 ];

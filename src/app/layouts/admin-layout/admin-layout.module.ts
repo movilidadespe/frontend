@@ -62,6 +62,7 @@ import { TipomovilidadComponent } from 'app/mantenimiento/tipomovilidad/tipomovi
 import { MovsubmComponent } from 'app/mantenimiento/movsubm/movsubm.component';
 import { ConvenioComponent } from 'app/mantenimiento/convenio/convenio.component';
 import { ConvoComponent } from 'app/mantenimiento/convo/convo.component';
+import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.component';
 
 
 
@@ -127,6 +128,7 @@ import { ConvoComponent } from 'app/mantenimiento/convo/convo.component';
     MovsubmComponent,
     ConvenioComponent,
     ConvoComponent,
+    ConvoAddComponent,
   ]
 })
 

@@ -1,127 +1,33 @@
-<br />
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-4 col-md-4">
+<h3>Create Customer</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">ID</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="convocatoria.id" name="name">
     </div>
-    <!-- <div class="col-md-auto"> -->
-    <div class="col-4 col-md-4">
-      <h3 class="text-center">Welcome to {{ title }}!</h3>
+    <div class="form-group">
+      <label for="name">Descripcion</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="convocatoria.descripcion" name="name">
     </div>
-    <div class="col-4 col-md-4 text-right">
-      <!-- <a routerLink="/list" class="btn btn-outline-primary">Lista</a> -->
+    <div class="form-group">
+      <label for="name">Fecha de Inicio</label>
+      <input type="datetime-local" class="form-control" id="name" required [(ngModel)]="convocatoria.fecha_fin" name="name">
     </div>
-  </div>
-</div>
-<div style="text-align:center">
-  <img width="200" alt="Angular Logo" src="../assets/images/flight.png" />
+    <div class="form-group">
+      <label for="name">Fecha de Fin</label>
+      <input type="datetime-local" class="form-control" id="name" required [(ngModel)]="convocatoria.fecha_inicio" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Estado</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="convocatoria.estado" name="age">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
 </div>
 
-<div class="text-center container">
-  <h1>Flight</h1>
-  <br />
-  <form [formGroup]="convocatoria" (ngSubmit)="addConvocatoria()">
-    <div class="form-group col-md-6">
-      <label for="destino">ID</label>
-      <input
-        type="number"
-        class="form-control text-center"
-        placeholder="Ingrese su ID"
-        formControlName="id"
-        [ngClass]="{
-          'is-invalid':
-            (f.id.touched || f.id.dirty) &&
-            f.id.errors
-        }"
-      />
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="descripcion">Nombre</label>
-        <input
-          type="text"
-          id="descripcion"
-          name="descripcion"
-          class="form-control text-center"
-          placeholder="Ingrese su nombre"
-          formControlName="descripcion"
-          [ngClass]="{
-            'is-invalid':
-              (f.descripcion.touched || f.descripcion.dirty) &&
-              f.descripcion.errors
-          }"
-          minlength="2"
-        />
-        <div *ngIf="f.descripcion.errors" class="invalid-feedback">
-          <div *ngIf="f.descripcion.errors.required">Su nombre es requerido</div>
-          <div *ngIf="f.descripcion.errors.minlength">min 2 letras</div>
-        </div>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="estado">Estado</label>
-        <input
-          type="text"
-          class="form-control text-center"
-          placeholder="Ingrese el estado"
-          formControlName="estado"
-          [ngClass]="{
-            'is-invalid':
-              (f.estado.touched || f.estado.dirty) && f.estado.errors
-          }"
-          minlength="2"
-        />
-        <div *ngIf="f.estado.errors" class="invalid-feedback">
-          <div *ngIf="f.estado.errors.required">
-            Su estado es requerido
-          </div>
-          <div *ngIf="f.estado.errors.minlength">min 2 letras</div>
-        </div>
-      </div>
-     
-        <div *ngIf="f.estado.errors" class="invalid-feedback">
-          <div *ngIf="f.estado.errors.required">
-            El estado es requerido
-          </div>
-        </div>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="date">Fecha inicio</label>
-        <input
-          type="date"
-          class="form-control text-center"
-          formControlName="fecha_inicio"
-          [ngClass]="{
-            'is-invalid':
-              (f.fecha_inicio.touched || f.fecha_inicio.dirty) &&
-              f.fecha_inicio.errors
-          }"
-        />
-        <div *ngIf="f.fecha_inicio.errors" class="invalid-feedback">
-          <div *ngIf="f.fecha_inicio.errors.required">La fecha es requerida</div>
-        </div>
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label for="fecha_fin">Fecha Fin</label>
-      <input
-        type="date"
-        class="form-control text-center"
-        formControlName="fecha_fin"
-        [ngClass]="{
-          'is-invalid':
-            (f.fecha_fin.touched || f.fecha_fin.dirty) &&
-            f.fecha_fin.errors
-        }"
-      />
-      <div *ngIf="f.fecha_fin.errors" class="invalid-feedback">
-        <div *ngIf="f.fecha_fin.errors.required">La fecha es requerida</div>
-      </div>
-    </div>
-  
-    <button
-      type="submit"
-      [disabled]="!convocatoria.valid"
-      class="btn btn-outline-success"
-    >
-      Reservar
-    </button>
-  </form>
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newCustomer()">Add</button>
 </div>
