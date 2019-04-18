@@ -23,7 +23,7 @@ private extractData(res: Response) {
   return body || {};
 }
 getConvocatoria() :Observable<any>  {
-  return this.http.get(url + 'convocatoria').pipe(map(this.extractData));
+  return this.http.get(url + 'convocatorias').pipe(map(this.extractData));
   }
 
 getRequisitos() :Observable<any> {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-convo',
@@ -9,7 +10,7 @@ import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento
 export class ConvoComponent implements OnInit {
   convo: any = [];
 
-  constructor(public rest: ConsumirMantenimientoService) { }
+  constructor(private router: Router, public rest: ConsumirMantenimientoService) { }
 
   ngOnInit() {
     this.getConvocatoria();
@@ -22,5 +23,7 @@ export class ConvoComponent implements OnInit {
       this.convo = data;
     });
   }
-
+  checkCrear(){
+    this.router.navigate(['mantenimiento/convo/convo-add']) 
+}
 }
