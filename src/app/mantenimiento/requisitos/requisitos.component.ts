@@ -7,7 +7,7 @@ import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento
   styleUrls: ['./requisitos.component.scss']
 })
 export class RequisitosComponent implements OnInit {
-  requisitos: any;
+  requisitos: any= [];
 
   constructor(public rest: ConsumirMantenimientoService) { }
 
