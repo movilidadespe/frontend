@@ -10,12 +10,14 @@ import { ConsumirMovilidadService } from 'app/service/consumir-movilidad.service
 export class PlanesComponent implements OnInit {
   plan: any = [];
   planmovi: any = [];
+  planindex: any = [];
 
   constructor(private router: Router, public rest: ConsumirMovilidadService) { }
 
   ngOnInit() {
     this.getPlan();
     this.getPlanMovi();
+    this.getindexadas();
   }
 
   getPlan() {
@@ -33,6 +35,14 @@ export class PlanesComponent implements OnInit {
     this.rest.getPlanMovi().subscribe((data: {}) => {
       console.log(data);
       this.planmovi = data;
+    });
+  }
+
+  getindexadas() {
+    this.planindex = [];
+    this.rest.getindexadas().subscribe((data: {}) => {
+      console.log(data);
+      this.planindex = data;
     });
   }
 

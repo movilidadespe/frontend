@@ -25,12 +25,17 @@ export class ConsumirMovilidadService {
   }
 
   getPlan() :Observable<any>  {
-    return this.http.get(url + 'solicitud').pipe(map(this.extractData));
+    return this.http.get(url + 'plan').pipe(map(this.extractData));
     }
 
     getPlanMovi() : Observable<any>  {
       return this.http.get(url + 'planmovilidad').pipe(map(this.extractData));
 }
+
+getindexadas() : Observable<any>  {
+  return this.http.get(url + 'indexadasmovilidad').pipe(map(this.extractData));
+}
+
 
 
 addProduct(product): Observable<any> {
