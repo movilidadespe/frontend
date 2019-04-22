@@ -29,7 +29,8 @@
                                     </th> 
                                     <th>
                                       estado
-                                    </th>                              
+                                    </th>   
+                                                               
 
                               </thead>
                               <tbody *ngFor="let c of convo">
@@ -38,7 +39,7 @@
                                           {{c.id}}
                                       </td>
                                       <td>
-                                       {{c.descrpcion}}
+                                       {{c.descripcion}}
                                       </td>
                                       <td>
                                           {{c.fecha_fin}}
@@ -49,6 +50,10 @@
                                          <td>
                                           {{c.estado}}
                                          </td>
+                                         <td>
+                                            <a class="list-group-item" (click)="checkEdit)"><i class="fa fa-plus" aria-hidden="true"></i> editar</a>
+                                          
+                                        </td>
                                       
                                   </tr>
                             </tbody>

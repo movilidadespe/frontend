@@ -26,4 +26,8 @@ export class ConvoComponent implements OnInit {
   checkCrear(){
     this.router.navigate(['mantenimiento/convo/convo-add']) 
 }
+
+checkEditar(){
+  this.router.navigate(['mantenimiento/convo/convo-edit']) 
+}
 }

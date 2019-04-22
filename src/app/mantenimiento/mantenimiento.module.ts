@@ -9,6 +9,7 @@ import { MovsubmComponent } from './movsubm/movsubm.component';
 import { ConvenioComponent } from './convenio/convenio.component';
 import { ConvoComponent } from './convo/convo.component';
 import { ConvoAddComponent } from './convo/convo-add/convo-add.component';
+import { ConvoEditComponent } from './convo/convo-edit/convo-edit.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ConvoAddComponent } from './convo/convo-add/convo-add.component';
     ConvenioComponent,
     ConvoComponent,
     ConvoAddComponent,
+    ConvoEditComponent,
   ], 
   exports :[
     RequisitosComponent,

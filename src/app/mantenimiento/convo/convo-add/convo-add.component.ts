@@ -8,6 +8,8 @@ import { CrearService } from 'app/service/crear.service';
   styleUrls: ['./convo-add.component.scss']
 })
 export class ConvoAddComponent implements OnInit {
+
+  
   convocatoria: Convoca= new Convoca();
   submitted = false;
 
