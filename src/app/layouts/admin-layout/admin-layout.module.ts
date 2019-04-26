@@ -7,9 +7,6 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
-
-
-
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -74,6 +71,7 @@ import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.c
     FormsModule,
     MatAutocompleteModule,
     MatBadgeModule,
+    ReactiveFormsModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
