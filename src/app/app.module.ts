@@ -12,20 +12,12 @@ import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { LoginComponent } from './login/login.component';
-
-
-import {
-  AgmCoreModule
-} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ConsumirService } from './service/consumir.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RequisitosService } from './service/requisitos.service';
-import { ConvocatoriaComponent } from './convocatoria/convocatoria.component';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -39,7 +31,8 @@ import { ConvocatoriaComponent } from './convocatoria/convocatoria.component';
       ComponentsModule,
       HttpClientModule,
       RouterModule,
-      AppRoutingModule
+      AppRoutingModule,
+      MatStepperModule
    ],
    declarations: [
       AppComponent,
@@ -49,6 +42,7 @@ import { ConvocatoriaComponent } from './convocatoria/convocatoria.component';
    providers: [
       ConsumirService,
       RequisitosService,
+
    ],
    bootstrap: [
       AppComponent

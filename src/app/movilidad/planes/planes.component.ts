@@ -11,7 +11,7 @@ export class PlanesComponent implements OnInit {
   plan: any = [];
   planmovi: any = [];
   planindex: any = [];
-
+  requisito: any = [];
   constructor(private router: Router, public rest: ConsumirMovilidadService) { }
 
   ngOnInit() {
@@ -28,6 +28,17 @@ export class PlanesComponent implements OnInit {
     });
   }
 
+//  requisitoestancia() {
+  //  this.router.navigate(['movilidad/estancia']);
+    //this.rest.requisitoestancia().subscribe(data => {
+     // if (data) {
+       // console.log('requisito,data')
+
+        //this.requisito = data;
+        
+     // }
+    //});
+ // }
 
 
   getPlanMovi() {
@@ -47,7 +58,7 @@ export class PlanesComponent implements OnInit {
   }
 
 checkEstancia(){
-    this.router.navigate(['movilidad/estancia']) 
+  this.router.navigate(['movilidad/estancia']) 
 }
 checkIndexada(){
   this.router.navigate(['movilidad/indexada']) 
@@ -64,4 +75,5 @@ checkGestion(){
 checkExternos(){
   this.router.navigate(['movilidad/externos'])
 }
+
 }

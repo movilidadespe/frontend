@@ -4,9 +4,4 @@ export class Convoca {
     fecha_fin: Date;
     fecha_inicio: Date;
     estado: boolean;
-
-    constructor(values: Object = {}) {
-        Object.assign(this, values);
-    }
-
 }

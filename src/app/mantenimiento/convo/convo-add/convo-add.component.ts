@@ -10,41 +10,34 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ConvoAddComponent implements OnInit {
 
-  contacto: FormGroup;
   
   convocatoria: Convoca= new Convoca();
+  contacto: FormGroup;
   submitted = false;
 
   constructor(private CrearService: CrearService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.contacto = this.formBuilder.group({
-        id: ['', Validators.required], 
-        descripcion: ['', Validators.required],   
-        fecha_fin: ['', Validators.required],   
-        fecha_inicio: ['', Validators.required],       
+        Id: ['', Validators.required],    
+        descripcion: ['', Validators.required],         
+        fecha_inicio: ['', Validators.required],
+        fecha_fin: ['', Validators.required],
         estado: ['', Validators.required],
     });
 }
 
-
 get f() { return this.contacto.controls; }
- 
-onSubmit() {
-    this.submitted = true;
-    this.save();
-
-    if (this.contacto.invalid) {
-        return;
-    }
-
-    alert('Mensaje Enviado !')
-}
 
   nuevo(): void {
     this.submitted = false;
     this.convocatoria = new Convoca();
   }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+}
 
 
   save() {

@@ -7,6 +7,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -44,6 +45,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+
 import { PlanesComponent } from 'app/movilidad/planes/planes.component';
 import { EstanciaComponent } from 'app/movilidad/estancia/estancia.component';
 import { IndexadaComponent } from 'app/movilidad/indexada/indexada.component';
@@ -69,9 +71,9 @@ import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.c
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
+    ReactiveFormsModule,
     MatAutocompleteModule,
     MatBadgeModule,
-    ReactiveFormsModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -106,6 +108,7 @@ import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.c
     MatTooltipModule,
     MatTreeModule,
   ],
+
   declarations: [
     DashboardComponent,
     IconsComponent,
@@ -127,7 +130,8 @@ import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.c
     ConvenioComponent,
     ConvoComponent,
     ConvoAddComponent,
-  ]
+  ],
+  providers:[]
 })
 
 export class AdminLayoutModule {}
