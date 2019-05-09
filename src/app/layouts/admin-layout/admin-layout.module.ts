@@ -8,6 +8,9 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { LoginComponent } from 'app/login/login.component';
 
+
+
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -45,7 +48,6 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
-
 import { PlanesComponent } from 'app/movilidad/planes/planes.component';
 import { EstanciaComponent } from 'app/movilidad/estancia/estancia.component';
 import { IndexadaComponent } from 'app/movilidad/indexada/indexada.component';
@@ -62,6 +64,17 @@ import { MovsubmComponent } from 'app/mantenimiento/movsubm/movsubm.component';
 import { ConvenioComponent } from 'app/mantenimiento/convenio/convenio.component';
 import { ConvoComponent } from 'app/mantenimiento/convo/convo.component';
 import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.component';
+import { RequisitosAddComponent } from 'app/mantenimiento/requisitos/requisitos-add/requisitos-add.component';
+import { ConvenioAddComponent } from 'app/mantenimiento/convenio/convenio-add/convenio-add.component';
+import { MovsubmAddComponent } from 'app/mantenimiento/movsubm/movsubm-add/movsubm-add.component';
+import { PlanmovAddComponent } from 'app/mantenimiento/planmovilidad/planmov-add/planmov-add.component';
+import { TipomovilidadAddComponent } from 'app/mantenimiento/tipomovilidad/tipomovilidad-add/tipomovilidad-add.component';
+import { RequisitosEditComponent } from 'app/mantenimiento/requisitos/requisitos-edit/requisitos-edit.component';
+import { PlanmovEditComponent } from 'app/mantenimiento/planmovilidad/planmov-edit/planmov-edit.component';
+import { TipomovilidadEditComponent } from 'app/mantenimiento/tipomovilidad/tipomovilidad-edit/tipomovilidad-edit.component';
+import { MovsubmEditComponent } from 'app/mantenimiento/movsubm/movsubm-edit/movsubm-edit.component';
+import { ConvenioEditComponent } from 'app/mantenimiento/convenio/convenio-edit/convenio-edit.component';
+import { ConvoEditComponent } from 'app/mantenimiento/convo/convo-edit/convo-edit.component';
 
 
 
@@ -108,7 +121,6 @@ import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.c
     MatTooltipModule,
     MatTreeModule,
   ],
-
   declarations: [
     DashboardComponent,
     IconsComponent,
@@ -130,8 +142,18 @@ import { ConvoAddComponent } from 'app/mantenimiento/convo/convo-add/convo-add.c
     ConvenioComponent,
     ConvoComponent,
     ConvoAddComponent,
-  ],
-  providers:[]
+    RequisitosAddComponent,
+    ConvenioAddComponent,
+    MovsubmAddComponent,
+    PlanmovAddComponent,
+    TipomovilidadAddComponent,
+   RequisitosEditComponent,
+   PlanmovEditComponent,
+  TipomovilidadEditComponent,
+    MovsubmEditComponent,
+    ConvenioEditComponent,
+    ConvoEditComponent,
+  ]
 })
 
 export class AdminLayoutModule {}
