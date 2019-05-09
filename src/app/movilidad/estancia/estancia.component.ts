@@ -2,52 +2,57 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequisitosService } from 'app/service/requisitos.service';
 import { ConsumirService } from 'app/service/consumir.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { AssertNotNull } from '@angular/compiler';
+import { NullViewportScroller } from '@angular/common/src/viewport_scroller';
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
+import { isNullOrUndefined, isNull } from 'util';
+
 declare var $: any;
 
 @Component({
   selector: 'app-estancia',
   templateUrl: './estancia.component.html',
   styleUrls: ['./estancia.component.scss']
+  
 })
 
 export class EstanciaComponent implements OnInit {
-  requisito: any;
+
+  requisito: any =[];
   id: any;
-  products: any = [];
+  form: FormGroup;
 
 
-  constructor(private router: Router, private requisitosService: RequisitosService, public rest: ConsumirService) { }
+  constructor(private router: Router, public rest: RequisitosService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getrequisito();
-    // this.getProducts(1718552381);
-
-  }
-
-  getProducts(id: number) {
-    this.products = [];
-    this.rest.getProducts(id).subscribe((data: {}) => {
-      console.log(data);
-      this.products = data;
-      this.products = Array.of(this.products);
-
+    this.form = this.formBuilder.group({
+      checkbox1: [''],
+      checkbox2: [''],
+      checkbox3: [''],
+      checkbox4: [''],
     });
-  }
 
-
-  getrequisito() {
-    // console.log('entre')
-    this.requisitosService.getrequisito().subscribe(data => {
-      if (data) {
-        console.log('requisito,data')
-        this.requisito = data;
+    this.form.setErrors({required: true});
+    this.form.valueChanges.subscribe((newValue) => {
+      if (newValue.checkbox1 === true && newValue.checkbox2 === true && newValue.checkbox3 === true && newValue.checkbox4 === true) {
+        this.form.setErrors(null);
+      } else {
+        this.form.setErrors({required: false});
       }
     });
 
-
   }
-  checkLogin() {
-    this.router.navigate(['maps'])
+
+ 
+  getrequisito() {
+    this.requisito = [];
+    this.rest.getrequisito().subscribe((data: {}) => {
+        console.log(data);
+        this.requisito = data;
+    });
 
   }
 }

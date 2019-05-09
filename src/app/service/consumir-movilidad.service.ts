@@ -35,7 +35,9 @@ export class ConsumirMovilidadService {
 getindexadas() : Observable<any>  {
   return this.http.get(url + 'indexadasmovilidad').pipe(map(this.extractData));
 }
-
+requisitoestancia() : Observable<any>  {
+  return this.http.get(url + 'requisito').pipe(map(this.extractData));
+}
 
 
 addProduct(product): Observable<any> {
