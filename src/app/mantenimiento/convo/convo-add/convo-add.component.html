@@ -8,41 +8,70 @@
             <h4 class="card-title ">Nueva convocatoria</h4>
           </div>
           <div class="card-body">
-            <form (ngSubmit)="onSubmit()">
+            <form [formGroup]="contacto" (ngSubmit)="onSubmit()">
+
               <div class="form-group">
-                <label for="name">&nbsp;ID</label>
-                <input type="text" class="form-control" id="name" required [(ngModel)]="convocatoria.id" name="name">
-              </div>
-              <div class="form-group">
-                <label for="name">&nbsp;Descripcion</label>
-                <input type="text" class="form-control" id="name" required [(ngModel)]="convocatoria.descripcion"
-                  name="name">
-              </div>
-              <div class="form-group">
-                <label for="name">&nbsp;Fecha de inicio</label>
-                <input type="date" class="form-control" id="name" required [(ngModel)]="convocatoria.fecha_fin"
-                  name="name">
-              </div>
-              <div class="form-group">
-                <label for="name">&nbsp;Fecha de finalización</label>
-                <input type="date" class="form-control" id="name" required [(ngModel)]="convocatoria.fecha_inicio"
-                  name="name">
+                <label>ID</label>
+                <input type="text" formControlName="Id" [ngClass]="{ 'is-invalid': submitted && f.Id.errors }"
+                  class="form-control" id="Id" required [(ngModel)]="convocatoria.Id" name="name">
+                <div *ngIf="submitted && f.Id.errors" class="invalid-feedback">
+                  <div *ngIf="f.Id.errors.required">Por favor, ingrese el identificador</div>
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="age">&nbsp;Estado</label>
-                <input type="text" class="form-control" id="age" required [(ngModel)]="convocatoria.estado" name="age">
+                <label>Descripcion</label>
+                <input type="text" formControlName="descripcion"
+                  [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" class="form-control" id="descripcion"
+                  required [(ngModel)]="convocatoria.descripcion" name="descripcion">
+                <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                  <div *ngIf="f.descripcion.errors.required">Por favor, ingrese la descripcion</div>
+                </div>
               </div>
 
-              <button type="submit" class="btn btn-success">Guardar</button>
+
+              <div class="form-group">
+                <label>Fecha de Inicio</label>
+                  <div class="col-md-6">
+                    <input type="date" formControlName="fecha_inicio"
+                      [ngClass]="{ 'is-invalid': submitted && f.fecha_inicio.errors }" class="form-control"
+                      id="fecha_inicio" required [(ngModel)]="convocatoria.fecha_inicio" name="fecha_inicio">
+                    <div *ngIf="submitted && f.fecha_inicio.errors" class="invalid-feedback">
+                      <div *ngIf="f.fecha_inicio.errors.required">Por favor, ingrese la fecha de Inicio</div>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="form-group">
+                <label>Fecha de Finalizacion</label>
+                <div class="col-md-6">
+                <input type="date" formControlName="fecha_fin"
+                  [ngClass]="{ 'is-invalid': submitted && f.fecha_fin.errors }" class="form-control" id="fecha_fin"
+                  required [(ngModel)]="convocatoria.fecha_fin" name="fecha_inicio">
+                <div *ngIf="submitted && f.fecha_fin.errors" class="invalid-feedback">
+                  <div *ngIf="f.fecha_fin.errors.required">Por favor, ingrese la fecha de Finalizacion</div>
+                </div>
+              </div>
+            </div>
+
+              <div class="form-group">
+                <label> Estado</label>
+                <select class="form-control" formControlName="estado" [(ngModel)]="convocatoria.estado"
+                  [ngClass]="{ 'is-invalid': submitted && f.estado.errors }">
+                  <option value="True">Activo</option>
+                  <option value="False">Inactivo</option>
+                </select>
+                <div *ngIf="submitted && f.estado.errors" class="invalid-feedback">
+                  <div *ngIf="f.estado.errors.required">Por favor, Seleccionar el estado</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button [disabled]="loading" class="btn btn-success">Guardar</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div [hidden]="!submitted">
-
 </div>
