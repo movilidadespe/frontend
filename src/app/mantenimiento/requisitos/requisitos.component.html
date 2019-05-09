@@ -5,7 +5,16 @@
               <div class="card">
 
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Requisitos </h4>    
+                        <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8" align="left">
+                                           <h4> Requisitos </h4> 
+                                    </div>
+                                    <div class="col-md-4" align="right">
+                                            <a class="list-group-item" (click)="checkCrear()"><i class="fa fa-plus" aria-hidden="true"></i> Añadir</a>
+                                    </div>
+                                </div>
+                            </div>   
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
@@ -38,6 +47,9 @@
                                          </td>
                                          <td>
                                           {{r.estado}}
+                                         </td>
+                                         <td>
+                                                <a class="list-group-item" routerLink= "requisitos-edit/{{r.id_requisito}}"><i class="fa fa-plus" aria-hidden="true"></i> Editar</a>
                                          </td>
                                   </tr>
                             </tbody>

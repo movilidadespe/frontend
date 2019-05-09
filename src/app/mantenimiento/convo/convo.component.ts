@@ -23,11 +23,11 @@ export class ConvoComponent implements OnInit {
       this.convo = data;
     });
   }
-  checkCrear(){
-    this.router.navigate(['mantenimiento/convo/convo-add']) 
+  checkCrear() {
+    this.router.navigate(['mantenimiento/convo/convo-add'])
 }
 
-checkEditar(){
-  this.router.navigate(['mantenimiento/convo/convo-edit']) 
+checkEditar() {
+  this.router.navigate(['mantenimiento/convo/convo-edit'])
 }
 }

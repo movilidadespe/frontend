@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card">
+  
+            <div class="card-header card-header-danger">
+              <h4 class="card-title ">Nuevo Plan Movilidad</h4>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="contacto" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                      
+                      <input type="hidden" formControlName="Id" [ngClass]="{ 'is-invalid': submitted && f.Id.errors }"
+                        class="form-control" id="Id" required [(ngModel)]="planmov.id_planmov" name="name">
+                      <div *ngIf="submitted && f.Id.errors" class="invalid-feedback">
+                        <div *ngIf="f.Id.errors.required">Por favor, ingrese el identificador</div>
+                      </div>
+                    </div>
+      
+                    <div class="form-group">
+                      <label>Nombre</label>
+                      <input type="text" formControlName="nombre"
+                        [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" class="form-control" id="nombre"
+                        required [(ngModel)]="planmov.nombre" name="nombre">
+                      <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                        <div *ngIf="f.nombre.errors.required">Por favor, ingrese el nombre</div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label> Tipo de Movilidad</label>
+                      <select class="form-control" formControlName="tip_mov" [(ngModel)]="planmov.id_tipmov"
+                        [ngClass]="{ 'is-invalid': submitted && f.tip_mov.errors }">
+                        <option value="1">Plan de Movilidad</option>
+                        <option value="2">Solicitud Movilidad y Publicaciones Indexadas</option>
+                      </select>
+                      <div *ngIf="submitted && f.tip_mov.errors" class="invalid-feedback">
+                        <div *ngIf="f.tip_mov.errors.required">Por favor, Seleccionar el tipo de Movilidad</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <button  (click)="checkVolver()" class="btn btn-basic">Volver</button>
+                      <button [disabled]="loading" class="btn btn-success">Guardar</button>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div [hidden]="!submitted">
+  
+  </div>

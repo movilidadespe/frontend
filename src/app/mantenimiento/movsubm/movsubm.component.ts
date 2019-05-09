@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movsubm',
@@ -7,9 +8,9 @@ import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento
   styleUrls: ['./movsubm.component.scss']
 })
 export class MovsubmComponent implements OnInit {
-movsubm: any;
+movsubm: any = [];
 
-  constructor(public rest: ConsumirMantenimientoService) { }
+  constructor(private router: Router, public rest: ConsumirMantenimientoService) { }
 
   ngOnInit() {
     this.getMovsubm();
@@ -21,4 +22,10 @@ movsubm: any;
       this.movsubm = data;
     });
   }
+  checkCrear() {
+    this.router.navigate(['mantenimiento/movsubm/movsubm-add'])
+}
+checkEditar() {
+  this.router.navigate(['mantenimiento/movsubm/movsubm-edit'])
+}
 }

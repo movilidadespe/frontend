@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-convenio',
@@ -7,18 +8,25 @@ import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento
   styleUrls: ['./convenio.component.scss']
 })
 export class ConvenioComponent implements OnInit {
-  convenio: any;
-  constructor(public rest: ConsumirMantenimientoService) { }
+  convenio: any  = [];
+  constructor(private router: Router, public rest: ConsumirMantenimientoService) { }
 
   ngOnInit() {
     this.getConvenio();
   }
 
-  getConvenio(){
+  getConvenio() {
     this.convenio = [];
     this.rest.getConvenio().subscribe((data: {}) => {
       console.log(data);
       this.convenio = data;
     });
   }
+  checkCrear() {
+    this.router.navigate(['mantenimiento/convevio/convevio-add'])
+}
+
+checkEditar() {
+  this.router.navigate(['mantenimiento/convevio/convevio-edit'])
+}
 }

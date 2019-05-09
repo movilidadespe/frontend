@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-requisitos',
@@ -7,12 +8,14 @@ import { ConsumirMantenimientoService } from 'app/service/consumir-mantenimiento
   styleUrls: ['./requisitos.component.scss']
 })
 export class RequisitosComponent implements OnInit {
-  requisitos: any= [];
+  requisitos: any = [];
+  requisito: any = [];
 
-  constructor(public rest: ConsumirMantenimientoService) { }
+  constructor(private router: Router,public rest: ConsumirMantenimientoService) { }
 
   ngOnInit() {
     this.getRequisitos();
+    this.getRequisito();
   }
   getRequisitos() {
     this.requisitos = [];
@@ -21,4 +24,16 @@ export class RequisitosComponent implements OnInit {
       this.requisitos = data;
     });
   }
+  getRequisito() {
+    this.requisito = [];
+    this.rest.getRequisitos().subscribe((data: {}) => {
+      console.log(data);
+      this.requisito = data;
+    });
+  }
+  checkCrear() {
+    this.router.navigate(['mantenimiento/requisitos/requisitos-add'])
+}
+
+
 }
