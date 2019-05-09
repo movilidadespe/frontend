@@ -29,17 +29,21 @@ getConvocatoria() :Observable<any>  {
 getRequisitos() :Observable<any> {
   return this.http.get(url + 'requisitos').pipe(map(this.extractData));
 }
+//getPMovilidad() :Observable<any>{
+  //return this.http.get(url + 'PlanMovilidads').pipe(map(this.extractData));
+//}
 getPMovilidad() :Observable<any>{
-  return this.http.get(url + 'PlanMovilidads').pipe(map(this.extractData));
+  return this.http.get(url + 'pmov').pipe(map(this.extractData));
 }
+
 getTMovilidad() :Observable<any>{
   return this.http.get(url + 'solicitud').pipe(map(this.extractData));
 }
 getMovsubm() :Observable<any>{
-  return this.http.get(url + 'movsubm').pipe(map(this.extractData));
+  return this.http.get(url + 'smov').pipe(map(this.extractData));
 }
 getConvenio() :Observable<any>{
-  return this.http.get(url + 'convenios').pipe(map(this.extractData));
+  return this.http.get(url + 'conven').pipe(map(this.extractData));
 }
 create(convo: any): Observable<any> {
   return this.http.post(url + `/crearConv`, convo);

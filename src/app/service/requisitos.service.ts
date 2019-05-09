@@ -1,31 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { map, tap, catchError} from  "rxjs/operators";
+import { HttpHeaders } from "@angular/common/http";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { environment } from 'environments/environment';
+import { Observable, of } from "rxjs";
+import { Http, Response } from '@angular/http';
 
-
-
-const url = "http://localhost:8030/";
-
+const res = "http://localhost:8030/requisitos";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json"
   })
 };
-
 @Injectable({
   providedIn: 'root'
 })
-
 export class RequisitosService {
 
-  constructor(private http: HttpClient) { }
-  private extractData(res: Response){
-    let body = res;
-    return body || {};
-  }
+  constructor(private http: Http) { }
 
-  getrequisito():Observable <any> {
-    return this.http.get(url + 'requisitos').pipe(map(this.extractData));
+  getrequisito(): Observable <any> {
+    console.log(' el servicio funciona');
+ 
+    return this.http.get(res).map(( res: Response)=>res.json())
   }
 }
