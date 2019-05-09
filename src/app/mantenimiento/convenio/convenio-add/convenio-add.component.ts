@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Convenio } from 'app/convenio';
+
 import { ConvenioService } from 'app/service/convenio.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Convenio } from 'app/convenio';
 
 @Component({
   selector: 'app-convenio-add',

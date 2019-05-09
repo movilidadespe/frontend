@@ -1,7 +1,8 @@
-export class Convoca {
+export class Convenio {
     id: string;
-    descrpcion: string;
+    descrpcion: number;
     fecha_fin: Date;
     fecha_inicio: Date;
     estado: boolean;
+    code: number;
 }
