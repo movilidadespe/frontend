@@ -1,0 +1,62 @@
+<div class="main-content">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">{{plan[0]["movilidad"]}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group-item">
+                            <button type="button" class="btn btn-link"
+                                (click)="checkEstancia()">{{planmovi[0]["planmovilidad"]}} </button>
+                        </div>
+                        <div class="list-group-item">
+                            <button type="button" class="btn btn-link"
+                                (click)="checkIntercambio()">{{planmovi[1]["planmovilidad"]}} </button>
+                        </div>
+                        <div class="list-group-item">
+                            <button type="button" class="btn btn-link"
+                                (click)="checkIntercambio()">{{planmovi[2]["planmovilidad"]}} </button>
+                        </div>
+
+
+                        <br>
+                        <div class="row">
+
+                            <div class="card-header card-header-danger" style="width: 600px;">
+                                <h4 class="card-title">{{plan[1]["movilidad"]}}</h4>
+                            </div>
+
+                            <form>
+                                <div class="row">
+                                    <div class="list-group-item">
+                                        <button type="button" class="btn btn-link"
+                                            (click)="checkArticulos()">{{planindex[0]["solicitudmovilidad"]}}</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="list-group-item">
+                                        <button type="button" class="btn btn-link "
+                                            (click)="checkGestion()">{{planindex[1]["solicitudmovilidad"]}}</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="list-group-item">
+                                        <button type="button" class="btn btn-link"
+                                            (click)="checkIndexada()">{{planindex[2]["solicitudmovilidad"]}}</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

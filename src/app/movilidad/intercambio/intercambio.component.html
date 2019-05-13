@@ -1,0 +1,177 @@
+<br>
+<br>
+<div class="main-content" style="margin:auto;width: 1500px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Intercambio de Profesores e Investigadores</h4>
+            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="container-fluid">
+                        <input type="text" name="id" [(ngModel)]="id">
+                        <button type="submit"  class="btn btn-success" (click)="onSubmit(id)">Verificar</button>
+                        
+                        
+                        <div class="row" *ngFor="let p of  products">
+                        
+                          
+
+                              
+                           
+                              <div class="col-md-4"  *ngFor="let p of  products"  ><br>
+                                <i class="fa fa-user-circle-o"></i> Nombres: {{p.nombres}}<br>
+                                <i class="fa fa-id-card"></i> Cédula: {{p.numero_DOCUMENTO}}<br>
+                                <i class="fa fa-envelope-o"></i> Correos: {{p.correo_INSTITUCIONAL}}<br>
+                                <i class="fa fa-user-circle-o"></i> Departamentos: {{p.departamento}}<br>
+                              </div>
+                              <div class="col-md-2"></div>
+                              <div class="col-md-4" *ngFor="let p of  products"><br>
+                                <i class="fa fa-user-circle-o"></i> Apellidos: {{p.apellido}}<br>
+                                <i class="fa fa-user-circle-o"></i> Tipo Academico: {{p.tipo_ACADEMICO}}<br>
+                                 <i class="fa fa-user-circle-o"></i> Seccion: {{p.seccion}}<br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ----------------------------------------------------------------------------------------- -->
+
+
+ 
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>REQUISITOS</ng-template>
+      <mat-list *ngFor="let v of  veri">
+          <mat-list-item >{{v.nombre}} &nbsp; <mat-checkbox     onclick="return false;"   color='primary'   [checked]="v.uzmtverireq_estado"    ></mat-checkbox></mat-list-item> 
+                                            
+        </mat-list>
+     
+      <div>
+        <button mat-button matStepperNext>Siguientes</button>
+      </div>
+    </form>
+  </mat-step>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Datos del Docente</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="nombre" required>
+      </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Cedula" formControlName="cedula" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Cargo" formControlName="cargo" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" required>
+    </mat-form-field>
+
+    <mat-form-field> 
+      <input matInput placeholder="Telefono" formControlName="telefono" required>
+    </mat-form-field>  
+
+    <mat-form-field>
+      <input matInput placeholder="Departamento" formControlName="departamento" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Carrera" formControlName="carrera" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Programa de Posgrado"  formControlName="programa" required>
+    </mat-form-field>
+      
+      <div>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+
+<!-- --------------------------------------------------------------------------------------- -->
+<mat-step [stepControl]="threeFormGroup">
+    <form [formGroup]="threeFormGroup">
+      <ng-template matStepLabel>Datos del Docente</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="nombre" required>
+      </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Cedula" formControlName="cedula" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Cargo" formControlName="cargo" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" required>
+    </mat-form-field>
+
+    <mat-form-field> 
+      <input matInput placeholder="Telefono" formControlName="telefono" required>
+    </mat-form-field>  
+
+    <mat-form-field>
+      <input matInput placeholder="Departamento" formControlName="departamento" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Carrera" formControlName="carrera" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Programa de Posgrado"  formControlName="programa" required>
+    </mat-form-field>
+      
+      <div>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+
+<!-- ------------------------------------------------------------------------------------------ -->
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
+                  
+                       
+                </div>  
+              </div>     
+        </div> 
+    </div> 
+</div>

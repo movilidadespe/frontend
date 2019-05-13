@@ -7,7 +7,7 @@ import {
 import { Observable, of } from "rxjs";
 import { map, catchError, tap } from "rxjs/operators";
 
-const endpoint = "http://localhost:8030/consumir/";
+const endpoint = "http://localhost:8030/";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json"
@@ -28,9 +28,23 @@ export class ConsumirService {
   }
 
   getProducts(id: number): Observable<any> {
-    return this.http.get(endpoint + id).pipe(map(this.extractData));
+    return this.http.get(endpoint+ 'findbyPIDM/' + id).pipe(map(this.extractData));
   }
-
+  getRequisitot(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'requisitototal/' + id).pipe(map(this.extractData));
+  }
+  getRequisito1(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'req1/' + id).pipe(map(this.extractData));
+  }
+  getRequisito2(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'req2/' + id).pipe(map(this.extractData));
+  }
+  getRequisito3(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'req3/' + id).pipe(map(this.extractData));
+  }
+  getRequisito4(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'req4/' + id).pipe(map(this.extractData));
+  }
 
 }
 

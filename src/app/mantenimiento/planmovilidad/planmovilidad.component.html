@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+
+                  <div class="card-header card-header-danger">
+                        <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8" align="left">
+                                           <h4> Plan Movilidad </h4> 
+                                    </div>
+                                    <div class="col-md-4" align="right">
+                                            <a class="list-group-item" (click)="checkCrear()"><i class="fa fa-plus" aria-hidden="true"></i> Añadir</a>
+                                    </div>
+                                </div>
+                            </div>   
+                      </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table" >
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                    Nombre
+                                  </th>  
+                                  <th>
+                                    Tipo de Movilidad
+                                  </th>                            
+
+                              </thead>
+                              <tbody *ngFor="let p of pmovilidad">
+                                  <tr>
+                                      <td>
+                                          {{p.uzmtplanmov_id}}
+                                      </td>
+                                      <td>
+                                       {{p.uzmtplanmov_nombre}}
+                                      </td>
+                                      <td>
+                                        {{p.uzmtipmov_nombre}}
+                                       </td>
+                                      <td>
+                                       <a class="list-group-item" routerLink= "planmov-edit/{{p.uzmtplanmov_id}}"><i class="fa fa-plus" aria-hidden="true"></i> Editar</a>
+                                        </td>
+                                  </tr>
+                            </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>       
+      </div>
+  </div>
+</div>
+

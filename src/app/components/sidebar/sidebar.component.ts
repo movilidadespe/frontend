@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'app/service/menu.service';
 
 declare const $: any;
 declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+   url: string;
+    opcion: string;
+    icono: string;
+    clase: string;
 }
 export const ROUTES: RouteInfo[] = [
-    
-  { path: '/convocatoria', title: 'Convocatoria',  icon: 'dashboard', class: '' },
-    { path: '/icons', title: 'Movilidad',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Mantenimiento',  icon:'location_on', class: '' },
-    { path: '/tipoMovilidad', title: 'Tipo  Movilidad',  icon:'', class: '' }
+
 ];
 
 @Component({
@@ -21,12 +18,14 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems: any[];
+  menuItem: any = [];
 
-  constructor() { }
+  constructor(public rest: MenuService) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItem = ROUTES.filter(menuItem => menuItem);
+    this.getMenu();
+
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -34,4 +33,14 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+
+  getMenu() {
+    this.menuItem = [];
+    this.rest.getMenu().subscribe(data => {
+      console.log(data.opciones);
+      this.menuItem = data.opciones;
+
+    });
+  }
+
 }

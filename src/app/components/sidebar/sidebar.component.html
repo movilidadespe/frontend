@@ -1,48 +1,49 @@
 <div class="logo">
-    <a href="" class="simple-text">
-        <div class="logo-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Logo_ESPE.png"/>
-        </div>
-        <b>Movilidad</b>
-        
-    </a>
+  <a href="" class="simple-text">
+      <div class="logo-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Logo_ESPE.png"/>
+      </div>
+      <b>Movilidad</b>
+      
+  </a>
 </div>
 <div class="sidebar-wrapper">
-  <div *ngIf="isMobileMenu()">
-    <form class="navbar-form">
-      <span class="bmd-form-group">
-        <div class="input-group no-border">
-          <input type="text" value="" class="form-control" placeholder="Buscar">
-          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
-            <i class="material-icons">buscar</i>
-            <div class="ripple-container"></div>
-          </button>
-        </div>
-      </span>
-    </form>
-    <ul class="nav navbar-nav nav-mobile-menu">
-        <li class="nav-item">
-            <a class="nav-link" href="table-list">
-                <i class="material-icons">usuario</i>
-                <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                </p>
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            
-        </li>
-        
-    </ul>
+<div *ngIf="isMobileMenu()">
+  <form class="navbar-form">
+    <span class="bmd-form-group">
+      <div class="input-group no-border">
+        <input type="text" value="" class="form-control" placeholder="Buscar">
+        <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+          <i class="material-icons">buscar</i>
+          <div class="ripple-container"></div>
+        </button>
+      </div>
+    </span>
+  </form>
+  <ul class="nav navbar-nav nav-mobile-menu">
+      <li class="nav-item">
+          <a class="nav-link" href="table-list">
+              <i class="material-icons">usuario</i>
+              <p>
+                  <span class="d-lg-none d-md-block">Stats</span>
+              </p>
+          </a>
+      </li>
+      <li class="nav-item dropdown">
+          
+      </li>
+      
+  </ul>
 
-    
-  </div>
-    <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a class="nav-link" [routerLink]="[menuItem.path]">
-                <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
-            </a>
-        </li>
-    </ul>
+  
+</div>
+  <ul class="nav">
+      <li routerLinkActive="active" *ngFor="let m of menuItem" class="{{menuItem.class}} nav-item">
+          <a class="nav-link" [routerLink]="[m.url]">
+              <i class="material-icons">{{m.icono}}</i>
+              <p>{{m.opcion}}</p>
+
+          </a>
+      </li>
+  </ul>
 </div>

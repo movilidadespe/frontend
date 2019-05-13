@@ -1,0 +1,71 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                        <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8" align="left">
+                                           <h4> Convocatoria </h4> 
+                                    </div>
+                                    <div class="col-md-4" align="right">
+                                            <a class="list-group-item" (click)="checkCrear()"><i class="fa fa-plus" aria-hidden="true"></i> Añadir</a>
+                                    </div>
+                                </div>
+                            </div>   
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table" >
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                    Descripcion
+                                  </th>   
+                                  <th>
+                                      Fecha inicio
+                                    </th> 
+                                    <th>
+                                      Fecha fin
+                                    </th> 
+                                    <th>
+                                      estado
+                                    </th>   
+                                                               
+
+                              </thead>
+                              <tbody *ngFor="let c of convo">
+                                  <tr>
+                                      <td>
+                                          {{c.id}}
+                                      </td>
+                                      <td>
+                                       {{c.descripcion}}
+                                      </td>
+                                      <td>
+                                         {{c.fecha_inicio}}                                      
+                                      </td>
+                                         <td>
+                                         {{c.fecha_fin}}
+                                         </td>
+                                         <td>
+                                          {{c.estado}}
+                                         </td>
+                                         <td>
+                                                <a class="list-group-item" routerLink= "convo-edit/{{c.id}}" ><i class="fa fa-plus" aria-hidden="true"></i> Editar</a>
+                                        </td>
+                                      
+                                  </tr>
+                            </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>       
+      </div>
+  </div>
+</div>
