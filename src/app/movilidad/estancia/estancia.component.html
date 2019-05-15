@@ -60,16 +60,17 @@
                                 
                               </div>
                               <div class="card-body">
-                                  <mat-horizontal-stepper >
+                                  <mat-vertical-stepper >
                                       <mat-step [stepControl]="firstFormGroup">
                                         <form [formGroup]="firstFormGroup">
                                           <ng-template matStepLabel>REQUISITOS</ng-template >
                                             
                                             <mat-list *ngFor="let v of  veri">
                                                 <mat-list-item >{{v.nombre}} &nbsp; <mat-checkbox     onclick="return false;"   color='primary'   [checked]="v.uzmtverireq_estado"    ></mat-checkbox></mat-list-item> 
-                                                                                
+                                                <input type="hidden" formControlName="nombre"  required>                               
                                             </mat-list>
-                                         
+                                             
+                                            <button mat-button matStepperNext>Siguiente</button>
                                             
                                         </form>
                                       </mat-step>
@@ -137,8 +138,10 @@
                                         </form>
                                           
                                         </mat-step>
-                                        <mat-step >
-                                      <form>
+                                        
+                                         <mat-step [stepControl]="threeFormGroup" errorMessage="Address is required." >
+                                         <form [formGroup]="threeFormGroup" >
+                                      
                                         <ng-template matStepLabel>PROYECTO ESTANCIA</ng-template>
                                         <div class="container">
                                             <div class="col-md-4">
@@ -274,8 +277,8 @@
                                       </form>
                                           </mat-step>
                                     
-                                          <mat-step >
-                                            <form >
+                                          <mat-step [stepControl]="fourFormGroup" errorMessage="Address is required." >
+                                              <form [formGroup]="fourFormGroup" >
                                                 <ng-template matStepLabel>CRONOGRAMA</ng-template>
                                                 <div class="container">
                                                   <div class="row">
@@ -305,8 +308,8 @@
                                               
                                             </mat-step>
                                     
-                                            <mat-step >
-                                              <form >
+                                            <mat-step [stepControl]="fiveFormGroup" errorMessage="Address is required." >
+                                                <form [formGroup]="fiveFormGroup" >
                                                   <ng-template matStepLabel>FINANCIAMIENTO</ng-template>
                                                   <div class="container">
                                                       <div class="row">
@@ -340,7 +343,7 @@
                                               </form>
                                                 
                                               </mat-step>
-                                    </mat-horizontal-stepper>
+                                    </mat-vertical-stepper>
                               </div>
                             </div>
                           </div>
@@ -352,5 +355,3 @@
       </div> 
   </div> 
 </div>
-
-

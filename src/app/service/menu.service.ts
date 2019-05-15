@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { map, catchError, tap } from "rxjs/operators";
 
 
-const urlmenu = "http://10.1.60.74:8083/adm/cc/1722080569/1";
-//const urlmenu = "http://10.1.60.74:8083/adm/cc/1718552365/1";
+//const urlmenu = "http://10.1.60.26:8083/adm/access/1709616567/2";
+const urlmenu =   "http://10.1.60.26:8083/adm/access/1718552365/2";
 
 const httpOptions = {
   headers: new HttpHeaders({

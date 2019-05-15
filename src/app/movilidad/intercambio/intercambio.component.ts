@@ -9,6 +9,9 @@ import { VerificacionService } from 'app/service/verificacion.service';
 import { MatDialog } from '@angular/material';
 import Swal from'sweetalert2';
 import { isEmpty } from 'rxjs/operators';
+import { Cronogra } from 'app/cronograma';
+import { CrearService } from 'app/service/crear.service';
+import { Testinter } from 'app/testinter';
 
 
 
@@ -20,14 +23,9 @@ declare var $: any;
   styleUrls: ['./intercambio.component.scss']
 })
 
-
-
-
-
- 
-
-
 export class IntercambioComponent implements OnInit {
+  cronogra: Cronogra = new Cronogra();
+
   requisito: any;
   id: any;
   products: any = [];
@@ -37,27 +35,35 @@ export class IntercambioComponent implements OnInit {
   vr2: any = [];
   vr3: any = [];
   vr4: any = [];
-  
+  submitted= false;
   
   isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   threeFormGroup: FormGroup;
+  fourFormGroup: FormGroup;
 
 
-
-  constructor(public dialog: MatDialog, public restt: VerificacionService,private _formBuilder: FormBuilder ,private router: Router, private requisitosService: RequisitosService, public rest: ConsumirService) { }
+  constructor(public dialog: MatDialog, public restt: VerificacionService,private _formBuilder: FormBuilder ,private router: Router, private requisitosService: RequisitosService, public rest: ConsumirService,public resttt: CrearService) { }
 
   ngOnInit() {
-    this.getrequisito();
 
+  
   }
 
 
 
 
+  nuevo(): void {
+    this.submitted = false;
+    this.cronogra = new Cronogra();
 
+  }
 
+  submit() {
+    this.submitted = true;
+    this.createcrono();
+  }
 
 
   getProducts(id: number) {
@@ -70,7 +76,7 @@ export class IntercambioComponent implements OnInit {
         Swal.fire({
           type: 'error',
           title: 'Oops...',
-          text: 'El usuario no existe',
+          text: 'El usuario no aplica o no existe',
         
         })
         
@@ -144,24 +150,43 @@ export class IntercambioComponent implements OnInit {
     this.restt.getveri(id).subscribe((data: {}) => {
       console.log(data);
       this.veri = data;
-    
-      
-     
+
       if(this.veri[0].uzmtverireq_estado == true && this.veri[1].uzmtverireq_estado == true && this.veri[2].uzmtverireq_estado == true   && this.veri[3].uzmtverireq_estado == true) {
-
-      this.firstFormGroup = this._formBuilder.group({
+      
+        this.firstFormGroup = this._formBuilder.group({
+      
+      
         
-       });
+        });
+    
+        this.secondFormGroup = this._formBuilder.group({
+        
+        });
+    
+        this.threeFormGroup = this._formBuilder.group({
+     
+          
+        });
 
-       this.secondFormGroup = this._formBuilder.group({
-       
-       });
+        this.fourFormGroup = this._formBuilder.group({
 
-       this.threeFormGroup = this._formBuilder.group({
-       
-       });
-
+        });
       }else{
+
+
+        this.firstFormGroup = this._formBuilder.group({
+      
+          nombre: ['', Validators.required]
+            
+        });
+    
+        this.secondFormGroup = this._formBuilder.group({
+        
+        });
+    
+        this.threeFormGroup = this._formBuilder.group({
+          
+        });
 
         
         Swal.fire({
@@ -170,6 +195,8 @@ export class IntercambioComponent implements OnInit {
           text: 'No cumples con los requisitos',
         
         })
+  
+       
 
       }
 
@@ -188,6 +215,28 @@ export class IntercambioComponent implements OnInit {
 
    
   }
+
+  
+  createcrono(){
+    this.resttt.createcrono(this.cronogra)
+    .subscribe(data => console.log(data), error => console.log(error));
+    this.cronogra = new Cronogra();
+  }
+
+
+  usuarioguardado(){
+
+    Swal.fire({
+      type: 'success',
+      title: 'Exito',
+      text: 'Realizado con exito',
+    
+    })
+    
+  }
+
+ 
+  
 
 }
    

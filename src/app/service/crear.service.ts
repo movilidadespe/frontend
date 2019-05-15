@@ -39,4 +39,12 @@ export class CrearService {
     return this.http.get(this.url +"convocatoria/" + id).pipe(map(this.extractData));
   }
 
+
+  createcrono(cronograma: Object): Observable<Object> {
+    return this.http.post(`${this.url}` + `cronograma/create`, cronograma);
+  }
+  createtestinter(testinter: Object): Observable<Object> {
+    return this.http.post(`${this.url}` + `formexterinvi/create`, testinter);
+  }
+
 }

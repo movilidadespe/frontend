@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ConsumirService } from "app/service/consumir.service";
 
+
 @Component({
   selector: 'app-indexada',
   templateUrl: './indexada.component.html',
