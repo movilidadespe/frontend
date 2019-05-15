@@ -51,30 +51,22 @@
                         </div>
                     </div>
                     <hr/>
-                    <div class="main-content" style="margin:auto;width: 1450px;">
-                      <div class="container-fluid">
-                        <div class="row">
-                          <div class="col-md-10">
-                            <div class="card">
-                              <div class="card-header card-header-danger">
-                                <h4 class="card-title">Tabla de verificación</h4>
-                                
-                              </div>
-                              <div class="card-body">
-                                  <mat-vertical-stepper >
-                                      <mat-step [stepControl]="firstFormGroup">
-                                        <form [formGroup]="firstFormGroup">
-                                          <ng-template matStepLabel>REQUISITOS</ng-template >
-                                            
-                                            <mat-list *ngFor="let v of  veri">
-                                                <mat-list-item >{{v.nombre}} &nbsp; <mat-checkbox     onclick="return false;"   color='primary'   [checked]="v.uzmtverireq_estado"    ></mat-checkbox></mat-list-item> 
-                                                                                
-                                            </mat-list>
-                                         
-                                            
-                                        </form>
-                                      </mat-step>
-
+                   
+                           
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup"  id="formone">
+      <ng-template matStepLabel>REQUISITOS</ng-template>
+      <mat-list *ngFor="let v of  veri">
+          <mat-list-item  >{{v.nombre}} &nbsp; <mat-checkbox   onclick="return false;"   color='primary'   [checked]="v.uzmtverireq_estado" ></mat-checkbox> </mat-list-item> 
+          <input type="hidden" formControlName="nombre"  required>                                  
+        </mat-list>
+     
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
                                       <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required." >
                                         <form [formGroup]="secondFormGroup" >
                                             <ng-template matStepLabel >DATOS DEL PROFESOR</ng-template>
@@ -259,10 +251,6 @@
                           </div>
                         </div>
                       </div>
-                    </div>   
-              </div>  
-            </div>     
-      </div> 
-  </div> 
-</div>
+                
+      
 
