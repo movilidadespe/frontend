@@ -26,4 +26,9 @@ export class VerificacionService {
   getveri(id: number): Observable<any> {
     return this.http.get(url + "nuevo/"+id).pipe(map(this.extractData));
   }
+
+  getverif(id: number): Observable<any> {
+    return this.http.get(url + "nuevo2/"+id).pipe(map(this.extractData));
+  }
+
 }

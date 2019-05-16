@@ -9,7 +9,7 @@ import { VerificacionService } from 'app/service/verificacion.service';
 import { MatDialog } from '@angular/material';
 import Swal from'sweetalert2';
 import { isEmpty } from 'rxjs/operators';
-import { Cronogra } from 'app/cronograma';
+import { Cronogra } from 'app/cronograma'; 
 import { CrearService } from 'app/service/crear.service';
 import { Testinter } from 'app/testinter';
 
@@ -25,6 +25,12 @@ declare var $: any;
 
 export class IntercambioComponent implements OnInit {
   cronogra: Cronogra = new Cronogra();
+  submitted= false;
+  threeFormGroup: FormGroup;
+  Id:number=null;
+  lugar:string='';
+  fecha:Date=null;
+  actividad:string='';
 
   requisito: any;
   id: any;
@@ -35,43 +41,44 @@ export class IntercambioComponent implements OnInit {
   vr2: any = [];
   vr3: any = [];
   vr4: any = [];
-  submitted= false;
+  
   
   isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  threeFormGroup: FormGroup;
   fourFormGroup: FormGroup;
 
 
-  constructor(public dialog: MatDialog, public restt: VerificacionService,private _formBuilder: FormBuilder ,private router: Router, private requisitosService: RequisitosService, public rest: ConsumirService,public resttt: CrearService) { }
+  constructor(public dialog: MatDialog, public restt: VerificacionService,private _formBuilder: FormBuilder ,private router: Router, private requisitosService: RequisitosService, public rest: ConsumirService,private crearservice: CrearService) { }
 
   ngOnInit() {
-
-  
+    
   }
-
-
-
+  get f() { return this.threeFormGroup.controls; }
 
   nuevo(): void {
     this.submitted = false;
     this.cronogra = new Cronogra();
-
   }
 
-  submit() {
+  createcrono(){
+    this.crearservice.create(this.cronogra)
+    .subscribe(data => console.log(data), error => console.log(error));
+    this.cronogra = new Cronogra();
+  }
+
+  oonSubmit() {
     this.submitted = true;
     this.createcrono();
   }
 
-
+  
   getProducts(id: number) {
     this.products = [];
     this.rest.getProducts(id).subscribe((data: {}) => {
       console.log(data);
       this.products = data;
-      if(this.products == false  ){
+      if(this.products == false){
 
         Swal.fire({
           type: 'error',
@@ -185,6 +192,10 @@ export class IntercambioComponent implements OnInit {
         });
     
         this.threeFormGroup = this._formBuilder.group({
+          Id:['',Validators.required],
+          lugar:['',Validators.required],
+          fecha:['',Validators.required],
+          actividad:['',Validators.required],
           
         });
 
@@ -217,11 +228,6 @@ export class IntercambioComponent implements OnInit {
   }
 
   
-  createcrono(){
-    this.resttt.createcrono(this.cronogra)
-    .subscribe(data => console.log(data), error => console.log(error));
-    this.cronogra = new Cronogra();
-  }
 
 
   usuarioguardado(){

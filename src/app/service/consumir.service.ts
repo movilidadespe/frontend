@@ -45,6 +45,14 @@ export class ConsumirService {
   getRequisito4(id: number): Observable<any> {
     return this.http.get(endpoint+ 'req4/' + id).pipe(map(this.extractData));
   }
-
+  getRequisitomov1(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'reqmov1/' + id).pipe(map(this.extractData));
+  }
+  getRequisitomovsubm(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'requisitomovsubm/' + id).pipe(map(this.extractData));
+  }
+  getRequisitomovsubmfind(id: number): Observable<any> {
+    return this.http.get(endpoint+ 'smovfind/' + id).pipe(map(this.extractData));
+  }
 }
 

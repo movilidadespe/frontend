@@ -201,33 +201,49 @@
 </mat-step>
 <!-- --------------------------------------------------------------------------------------- -->
 <mat-step [stepControl]="threeFormGroup">
-    <form [formGroup]="threeFormGroup"  id="formthree"  (ngSubmit)="submit()">
+    <form [formGroup]="threeFormGroup" (ngSubmit)="oonSubmit()">
       <ng-template matStepLabel>CRONOGRAMA</ng-template>
                                                 <div class="container">
                                                   <div class="row">
-                                                      <div class="col-md-1">
+                                                      <div class="col-md-2">
                                                           <mat-form-field>
-                                                            <input formControlName="Id" matInput placeholder="Id"  type="number"  required [(ngModel)]="cronogra.id">
+                                                            <input formControlName="id" matInput placeholder="Id"  [ngClass]="{ 'is-invalid': submitted && f.Id.errors }"
+                                                             type="number" id="Id"
+                                                             required [(ngModel)]="cronogra.id">
+                                                             <div *ngIf="submitted && f.Id.errors" class="invalid-feedback">
+                                                                <div *ngIf="f.Id.errors.required">Por favor, ingrese el Id</div>
+                                                              </div>
                                                           </mat-form-field>
                                                         </div> 
-                                                        <div class="col-md-1">
-                                                            <mat-form-field>
-                                                              <input formControlName="Id_externo" matInput placeholder="Id_externo"  type="number" required [(ngModel)]="cronogra.id_externo" >
-                                                            </mat-form-field>
-                                                          </div> 
+                                          
                                                       <div class="col-md-3">
                                                           <mat-form-field>
-                                                            <input formControlName="Lugar" matInput placeholder="Lugar"  required [(ngModel)]="cronogra.lugar">
+                                                            <input formControlName="lugar" matInput placeholder="Lugar" [ngClass]="{ 'is-invalid': submitted && f.lugar.errors }"
+                                                            type="text" id="lugar"
+                                                            required [(ngModel)]="cronogra.lugar">
+                                                            <div *ngIf="submitted && f.lugar.errors" class="invalid-feedback">
+                                                                <div *ngIf="f.lugar.errors.required">Por favor, ingrese el lugar</div>
+                                                              </div>
                                                           </mat-form-field>
                                                         </div> 
                                                         <div class="col-md-3">
                                                             <mat-form-field>
-                                                              <input formControlName="Fecha" matInput placeholder="Fecha"  type="date"  required [(ngModel)]="cronogra.fecha">
+                                                              <input formControlName="fecha" matInput placeholder="Fecha" [ngClass]="{ 'is-invalid': submitted && f.lugar.errors }"
+                                                                type="date" id="fecha"
+                                                                required [(ngModel)]="cronogra.fecha">
+                                                                <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                                                                    <div *ngIf="f.fecha.errors.required">Por favor, ingrese la fecha</div>
+                                                                  </div>
                                                             </mat-form-field>
                                                           </div> 
                                                           <div class="col-md-4">
                                                               <mat-form-field>
-                                                                <input  formControlName="Actividad" matInput placeholder="Actividad"  required [(ngModel)]="cronogra.activ">
+                                                                <input  formControlName="actividad" matInput placeholder="Actividad" [ngClass]="{ 'is-invalid': submitted && f.actividad.errors }"
+                                                                  type="text" id="actividad"
+                                                                   [(ngModel)]="cronogra.activ">
+                                                                   <div *ngIf="submitted && f.actividad.errors" class="invalid-feedback">
+                                                                      <div *ngIf="f.actividad.errors.required">Por favor, ingrese la actividad a seguir</div>
+                                                                    </div>
                                                               </mat-form-field>
                                                             </div> 
                                                   </div>
@@ -235,7 +251,7 @@
                                                 
                                                   <div>
                                                       <button mat-button matStepperPrevious>Atras</button>
-                                                      <button mat-button matStepperNext (click)="createcrono()">Siguiente</button>
+                                                      <button mat-button matStepperNext [disabled]="loading">Siguiente</button>
                                                     </div>
                                                     
     </form>

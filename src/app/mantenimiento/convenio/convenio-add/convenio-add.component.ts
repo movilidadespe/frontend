@@ -12,7 +12,7 @@ import { Convenio } from 'app/convenio';
 })
 export class ConvenioAddComponent implements OnInit {
   convenio: Convenio = new Convenio();
-  contacto: FormGroup;
+  contacto: FormGroup;  
   submitted = false;
 
   constructor(private convenioService: ConvenioService, private router: Router, private formBuilder: FormBuilder) { }

@@ -28,6 +28,8 @@ export class EstanciaComponent implements OnInit {
   vr2: any = [];
   vr3: any = [];
   vr4: any = [];
+  isLinear = true;
+
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -162,12 +164,17 @@ getveri(id: number) {
 
       this.firstFormGroup = this.formBuilder.group({
     
-        nombre: ['', Validators.required]
+        nombre: ['', Validators.required],
           
       });
   
       this.secondFormGroup = this.formBuilder.group({
       
+      });
+
+      this.threeFormGroup = this.formBuilder.group({
+   
+        
       });
   
    
