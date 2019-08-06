@@ -1,0 +1,327 @@
+<br>
+<br>
+<div class="main-content" style="margin:auto;width: 1500px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Intercambio de Profesores e Investigadores</h4>
+            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="container-fluid">
+                        <input type="text" name="id" [(ngModel)]="id">
+                        <button type="submit"  class="btn btn-success" (click)="onSubmit(id)">Verificar</button>
+   
+                        <div class="row" *ngFor="let p of  products">
+
+                              <div class="col-md-4"  *ngFor="let p of  products"  ><br>
+                                <i class="fa fa-user-circle-o"></i> Nombres: {{p.nombres}}<br>
+                                <i class="fa fa-id-card"></i> Cédula: {{p.numero_DOCUMENTO}}<br>
+                                <i class="fa fa-envelope-o"></i> Correos: {{p.correo_INSTITUCIONAL}}<br>
+                                <i class="fa fa-user-circle-o"></i> Departamentos: {{p.departamento}}<br>
+                              </div>
+                              <div class="col-md-2"></div>
+                              <div class="col-md-4" *ngFor="let p of  products"><br>
+                                <i class="fa fa-user-circle-o"></i> Apellidos: {{p.apellido}}<br>
+                                <i class="fa fa-user-circle-o"></i> Tipo Academico: {{p.tipo_ACADEMICO}}<br>
+                                 <i class="fa fa-user-circle-o"></i> Seccion: {{p.seccion}}<br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ----------------------------------------------------------------------------------------- -->
+
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup"  id="formone">
+      <ng-template matStepLabel>REQUISITOS</ng-template>
+      <mat-list *ngFor="let v of  veri">
+          <mat-list-item  >{{v.nombre}} &nbsp; <mat-checkbox   onclick="return false;"   color='primary'   [checked]="v.uzmtverireq_estado" ></mat-checkbox> </mat-list-item> 
+          <input type="hidden" formControlName="nombre"  required>                                  
+        </mat-list>
+     
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+<mat-step [stepControl]="secondFormGroup">                             
+<form [formGroup]="secondFormGroup"  id="formtwo">
+  <ng-template matStepLabel>FORMULARIO ESTANCIA e INTERCAMBIO</ng-template>
+  <div class="container">
+      <div class="col-md-4">
+          <h3>Formulario Estancia</h3>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Antecedentes" required>
+        </mat-form-field>
+        <mat-form-field>
+        <input matInput placeholder="Objetivo" required>
+        </mat-form-field>
+      
+      <div class="col-md-4">
+          <h3>Lugar de Estancia</h3>
+      </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Nombre" required>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Departamento/Centro/Otros" required>
+            </mat-form-field>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Pais" required>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Cuidad" required>
+            </mat-form-field>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Direccion" required>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Sitio web" required>
+            </mat-form-field>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Nombre de Contacto" required>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Telefono" required>
+            </mat-form-field>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Email" required>
+            </mat-form-field>
+          </div>
+          
+    </div>
+    <div class="col-md-4">
+        <h3>Para casos de estudio de doctorado</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Nombre del doctorado" required>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Nombre de la tesis" required>
+            </mat-form-field>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Fecha inicio estimada" type="date" required>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Fecha de finalizacion estimada" type="date" required>
+            </mat-form-field>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="No. orden del rectorado con el que fue aprobado los estudios de doctorado" required>
+            </mat-form-field>
+          </div>  
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <mat-form-field>
+              <input matInput placeholder="Metas" required>
+            </mat-form-field>
+          </div>  
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <mat-form-field>
+              <input matInput placeholder="Entregables" required>
+            </mat-form-field>
+          </div>  
+    </div>
+
+  </div>
+
+  <div>
+    <button mat-button matStepperPrevious>Atras</button>
+    <button mat-button matStepperNext >Siguiente</button>
+  </div>
+</form>
+</mat-step>
+<!-- --------------------------------------------------------------------------------------- -->
+<mat-step [stepControl]="threeFormGroup">
+    <form [formGroup]="threeFormGroup" (ngSubmit)="oonSubmit()">
+      <ng-template matStepLabel>CRONOGRAMA</ng-template>
+                                                <div class="container">
+                                                  <div class="row">
+                                                      <div class="col-md-2">
+                                                          <mat-form-field>
+                                                            <input formControlName="id" matInput placeholder="Id"  [ngClass]="{ 'is-invalid': submitted && f.Id.errors }"
+                                                             type="number" id="Id"
+                                                             required [(ngModel)]="cronogra.id">
+                                                             <div *ngIf="submitted && f.Id.errors" class="invalid-feedback">
+                                                                <div *ngIf="f.Id.errors.required">Por favor, ingrese el Id</div>
+                                                              </div>
+                                                          </mat-form-field>
+                                                        </div> 
+                                          
+                                                      <div class="col-md-3">
+                                                          <mat-form-field>
+                                                            <input formControlName="lugar" matInput placeholder="Lugar" [ngClass]="{ 'is-invalid': submitted && f.lugar.errors }"
+                                                            type="text" id="lugar"
+                                                            required [(ngModel)]="cronogra.lugar">
+                                                            <div *ngIf="submitted && f.lugar.errors" class="invalid-feedback">
+                                                                <div *ngIf="f.lugar.errors.required">Por favor, ingrese el lugar</div>
+                                                              </div>
+                                                          </mat-form-field>
+                                                        </div> 
+                                                        <div class="col-md-3">
+                                                            <mat-form-field>
+                                                              <input formControlName="fecha" matInput placeholder="Fecha" [ngClass]="{ 'is-invalid': submitted && f.lugar.errors }"
+                                                                type="date" id="fecha"
+                                                                required [(ngModel)]="cronogra.fecha">
+                                                                <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                                                                    <div *ngIf="f.fecha.errors.required">Por favor, ingrese la fecha</div>
+                                                                  </div>
+                                                            </mat-form-field>
+                                                          </div> 
+                                                          <div class="col-md-4">
+                                                              <mat-form-field>
+                                                                <input  formControlName="actividad" matInput placeholder="Actividad" [ngClass]="{ 'is-invalid': submitted && f.actividad.errors }"
+                                                                  type="text" id="actividad"
+                                                                   [(ngModel)]="cronogra.activ">
+                                                                   <div *ngIf="submitted && f.actividad.errors" class="invalid-feedback">
+                                                                      <div *ngIf="f.actividad.errors.required">Por favor, ingrese la actividad a seguir</div>
+                                                                    </div>
+                                                              </mat-form-field>
+                                                            </div> 
+                                                  </div>
+                                                </div>
+                                                
+                                                  <div>
+                                                      <button mat-button matStepperPrevious>Atras</button>
+                                                      <button mat-button matStepperNext [disabled]="loading">Siguiente</button>
+                                                    </div>
+                                                    
+    </form>
+  </mat-step>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+<mat-step [stepControl]="fourFormGroup">
+  <form [formGroup]="fourFormGroup"  id="formfour">
+      <ng-template matStepLabel>FINANCIAMIENTO</ng-template>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3">
+                  <mat-form-field>
+                    <input matInput placeholder="Ayuda economica"  type="number"required>
+                  </mat-form-field>
+                </div> 
+                <div class="col-md-3">
+                    <mat-form-field>
+                      <input matInput placeholder="Pasajes" type="number" required>
+                    </mat-form-field>
+                  </div> 
+                  <div class="col-md-3">
+                      <mat-form-field>
+                        <input matInput placeholder="Otros"  type="number" required>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-form-field>
+                          <input matInput placeholder="Total" type="number" required>
+                        </mat-form-field>
+                      </div>  
+          </div>
+        </div>
+      
+        <div>
+            <button mat-button matStepperPrevious>Atras</button>
+            <button mat-button matStepperNext >Siguiente</button>
+          </div>
+  </form>
+  </mat-step>
+  <!-- ------------------------------------------------------------------------------------------ -->
+<mat-step [stepControl]="fiveFormGroup">
+  <form [formGroup]="fiveFormGroup"  id="formfive">
+      <ng-template matStepLabel>SUBIDA DE ARCHIVOS</ng-template>
+      <div class="container">
+          <div class="row">
+             
+                  <div class="col-md-3">
+                      <mat-form-field>
+                        <input matInput placeholder="Otros"  type="number" required>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-form-field>
+                          <input matInput placeholder="Total" type="number" required>
+                        </mat-form-field>
+                      </div>  
+          </div>
+        </div>
+      
+        <div>
+            <button mat-button matStepperPrevious>Atras</button>
+            <button mat-button  (click)="usuarioguardado()">Finalizar</button>
+          </div>
+  </form>
+  </mat-step>
+</mat-vertical-stepper>
+                  
+                </div>  
+              </div>     
+        </div> 
+    </div> 
+</div>

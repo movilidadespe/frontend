@@ -1,0 +1,81 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+
+                  <div class="card-header card-header-danger">
+                      <div class="container-fluid">
+                          <div class="row">
+                              <div class="col-md-8" align="left">
+                                  <h4> Convenio </h4> 
+                              </div>
+
+                              <div class="col-md-4" align="right">
+                                  <a class="list-group-item" (click)="checkCrear()"><i class="fa fa-plus" aria-hidden="true"></i> Añadir</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table" >
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                   Tipo Convenio 
+                                  </th>  
+                                  <th>
+                                    Fecha Inicio
+                                  </th>  
+                                  <th>
+                                    Fecha Fin
+                                  </th>  
+                                  <th>
+                                    Estado
+                                  </th>  
+                                  <th>
+                                    Universidad / Centro de Investigación
+                                  </th>                                
+
+                              </thead>
+                              <tbody *ngFor="let c of convenio">
+                                  <tr>
+                                      <td>
+                                          {{c.uzmtconvenio_id}}
+                                      </td>
+                                      <td>
+                                       {{c.uzmttipconve_nom}}
+                                      </td>
+                                      <td>
+                                        {{c.uzmtconvenio_fech_ini}}
+                                       </td>
+                                       <td>
+                                        {{c.uzmtconvenio_fech_fin}}
+                                       </td>
+                                       <td>
+                                        {{c.uzmtconvenio_estado}}
+                                       </td>
+                                       <td>
+                                        {{c.stusbgi_code}}
+                                       </td>
+                                       <td>
+                                         <a class="list-group-item" routerLink= "convenio-edit/{{c.uzmtconvenio_id}}"><i class="fa fa-plus" aria-hidden="true"></i> Editar</a>
+
+                                        </td>
+                                       
+                                  </tr>
+                            </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>       
+      </div>
+  </div>
+</div>
+

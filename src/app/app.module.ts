@@ -11,36 +11,43 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ConsumirService } from './service/consumir.service';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import {MatStepperModule} from '@angular/material/stepper';
+import { version } from 'punycode';
+import { VerificacionService } from './service/verificacion.service';
+
+
+
+
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpModule,
-    ComponentsModule,
-    RouterModule,
-    AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
-  ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
+   imports: [
+      BrowserAnimationsModule,
+      FormsModule,
+      HttpModule,
+      ComponentsModule,
+      HttpClientModule,
+      RouterModule,
+      AppRoutingModule,
+      MatStepperModule
+   ],
+   declarations: [
+      AppComponent,
+      AdminLayoutComponent,
+      
+   ],
+   providers: [
+      ConsumirService,
+      VerificacionService
 
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

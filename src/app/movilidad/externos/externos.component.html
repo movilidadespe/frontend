@@ -1,0 +1,297 @@
+<br>
+<br>
+<div class="main-content" style="margin:auto;width: 1500px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Presencia de Investigadores Externos</h4>
+            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="container-fluid">
+                        <input type="text" name="id" [(ngModel)]="id">
+                        <button type="submit"  class="btn btn-success" (click)="onSubmit(id)">Verificar</button>
+                        
+                        
+                        <div class="row" >
+                        
+                          
+
+
+                            <div class="col-md-4" *ngFor="let p of  products" ><br>
+                              <i class="fa fa-user-circle-o"></i> Nombres: {{p.nombres}}<br>
+                              <i class="fa fa-id-card"></i> Cédula: {{p.numero_DOCUMENTO}}<br>
+                              <i class="fa fa-envelope-o"></i> Correos: {{p.correo_INSTITUCIONAL}}<br>
+                              <i class="fa fa-user-circle-o"></i> Departamentos: {{p.departamento}}<br>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4" *ngFor="let p of  products"><br>
+                              <i class="fa fa-user-circle-o"></i> Apellidos: {{p.apellido}}<br>
+                              <i class="fa fa-user-circle-o"></i> Tipo Academico: {{p.tipo_ACADEMICO}}<br>
+                               <i class="fa fa-user-circle-o"></i> Seccion: {{p.seccion}}<br>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="main-content" style="margin:auto;width: 1450px;">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-10">
+                            <div class="card">
+                              <div class="card-header card-header-danger">
+                                <h4 class="card-title">Tabla de verificación</h4>
+                                
+                              </div>
+
+                              <!-- ------------------------------------------------------------------------------------- -->
+
+
+                              <div class="card-body">
+
+                                  <mat-vertical-stepper [linear]="isLinear" #stepper>
+                                  <mat-step [stepControl]="firstFormGroup">
+                                        <form [formGroup]="firstFormGroup">
+                                          <ng-template matStepLabel>REQUISITOS</ng-template >
+                                            
+                                            <mat-list *ngFor="let v of  veri">
+                                                <mat-list-item >{{v.nombre}} &nbsp; <mat-checkbox     onclick="return false;"   color='primary'   [checked]="v.uzmtverireq_estado"    ></mat-checkbox></mat-list-item> 
+                                                <input type="hidden" formControlName="nombre"  required>                                 
+                                            </mat-list>
+                                            <div>
+                                                <button mat-button matStepperNext>Siguiente</button>
+                                              </div>
+                                            
+
+                                        </form>
+                                      </mat-step>
+
+                                      <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required." >
+                                        <form [formGroup]="secondFormGroup" >
+                                            <ng-template matStepLabel >DATOS DEL INVESTIGADOR</ng-template>
+                                            <div class="row"> 
+                                              <div class="col-md-6">
+                                                <mat-form-field>
+                                                  <input matInput placeholder="Nombre"  required>
+                                                </mat-form-field>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <mat-form-field>
+                                                  <input matInput placeholder="Cedula" required>
+                                                </mat-form-field>
+                                              </div>
+                                            </div>
+                                    
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <mat-form-field>
+                                                  <input matInput placeholder="Telefono" required>
+                                                </mat-form-field>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <mat-form-field>
+                                                  <input matInput placeholder="Email" required>
+                                                </mat-form-field>
+                                              </div>
+                                            </div>
+                                            <h4 class="card-title">Universidad/Centro de investigacion</h4>
+
+
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <mat-form-field>
+                                                  <input matInput placeholder="Nombre" required>
+                                                </mat-form-field>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <mat-form-field>
+                                                  <input matInput placeholder="direccion" required>
+                                                </mat-form-field>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="Telefono" required>
+                                                  </mat-form-field>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="Sitio Web" required>
+                                                  </mat-form-field>
+                                                </div>
+                                              </div>
+                                            
+                                              <div>
+                                                  <button mat-button matStepperPrevious >Atrás</button>
+                                                  <button mat-button matStepperNext>Siguiente</button>
+                                                </div>
+                                        </form>
+                                          
+                                        </mat-step>
+
+
+                                       <mat-step [stepControl]="threeFormGroup" errorMessage="Address is required." >
+                                        <form [formGroup]="threeFormGroup" >
+                                        <ng-template matStepLabel>INFORMACION DEL PROYECTO</ng-template>
+                                        <div class="container">
+                                            <div class="col-md-4">
+                                                <h3>Formulario Docentes externos</h3>
+                                            </div>
+                                            <mat-form-field>
+                                              <input matInput placeholder="Antecedentes" required>
+                                              </mat-form-field>
+                                              <mat-form-field>
+                                              <input matInput placeholder="Departamento o Centro" required>
+                                              </mat-form-field>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <mat-form-field>
+                                                        <input matInput placeholder="Grupo de investigacion" required>
+                                                      </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <mat-form-field>
+                                                        <input matInput placeholder="Linea de investigacion" required>
+                                                      </mat-form-field>
+                                                    </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <mat-form-field>
+                                                        <input matInput placeholder="Beneficiarios(docentes,estudiantes,otros)" required>
+                                                      </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <mat-form-field>
+                                                        <input matInput placeholder="Metodologia de trabajo" required>
+                                                      </mat-form-field>
+                                                    </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <mat-form-field>
+                                                        <input matInput placeholder="Fecha inicio estimada" type="date" required>
+                                                      </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <mat-form-field>
+                                                        <input matInput placeholder="Fecha de finalizacion estimada" type="date" required>
+                                                      </mat-form-field>
+                                                    </div>
+                                              </div>
+                                              <mat-form-field>
+                                                  <input matInput placeholder="Objetivos" required>
+                                                  </mat-form-field>
+                                                  <mat-form-field>
+                                                  <input matInput placeholder="Metas" required>
+                                                  </mat-form-field>
+ 
+                                        </div>
+
+                                        <div>
+                                          <button mat-button matStepperPrevious>Atras</button>
+                                          <button mat-button matStepperNext>Siguiente</button>
+                                        </div>
+                                      </form>
+                                          </mat-step>
+                                    
+                                          <mat-step >
+                                            <form >
+                                                <ng-template matStepLabel>CRONOGRAMA</ng-template>
+                                                <div class="container">
+                                                  <div class="row">
+                                                      <div class="col-md-3">
+                                                          <mat-form-field>
+                                                            <input matInput placeholder="Lugar" required>
+                                                          </mat-form-field>
+                                                        </div> 
+                                                        <div class="col-md-3">
+                                                            <mat-form-field>
+                                                              <input matInput placeholder="Fecha"  type="date"required>
+                                                            </mat-form-field>
+                                                          </div> 
+                                                          <div class="col-md-6">
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Actividad" required>
+                                                              </mat-form-field>
+                                                            </div> 
+                                                  </div>
+                                                </div>
+                                                
+                                                  <div>
+                                                      <button mat-button matStepperPrevious>Atras</button>
+                                                      <button mat-button matStepperNext>Siguiente</button>
+                                                    </div>
+                                            </form>
+                                              
+                                            </mat-step>
+                                    
+                                            <mat-step [stepControl]="fourFormGroup" errorMessage="Address is required." >
+                                                <form [formGroup]="fourFormGroup" >
+                                                  <ng-template matStepLabel>FINANCIAMIENTO</ng-template>
+                                                  <div class="container">
+                                                      <div class="row">
+                                                          <div class="col-md-3">
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Pasajes"  type="number"required>
+                                                              </mat-form-field>
+                                                            </div> 
+                                                            <div class="col-md-3">
+                                                                <mat-form-field>
+                                                                  <input matInput placeholder="hospedaje" type="number" required>
+                                                                </mat-form-field>
+                                                              </div> 
+                                                              <div class="col-md-3">
+                                                                  <mat-form-field>
+                                                                    <input matInput placeholder="Alimentacion"  type="number" required>
+                                                                  </mat-form-field>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <mat-form-field>
+                                                                      <input matInput placeholder="Otros" type="number" required>
+                                                                    </mat-form-field>
+                                                                  </div>
+                                                                  <div class="col-md-3">
+                                                                      <mat-form-field>
+                                                                        <input matInput placeholder="Total" type="number" required>
+                                                                      </mat-form-field>
+                                                                    </div>  
+                                                      </div>
+                                                    </div>
+                                                  
+                                                    <div>
+                                                        <button mat-button matStepperPrevious>Atras</button>
+                                                        <button mat-button matStepperNext>Finalizar</button>
+                                                      </div>
+                                              </form>
+                                                
+                                              </mat-step>
+                                    </mat-vertical-stepper>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>   
+              </div>  
+            </div>     
+      </div> 
+  </div> 
+</div>
